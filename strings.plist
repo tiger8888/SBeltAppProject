@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>chinese</key>
+	<dict>
+		<key>rootMenuItem1</key>
+		<string>身心状态监测</string>
+		<key>rootMenuItem2</key>
+		<string>身心状态调节</string>
+		<key>secondMenuItem1</key>
+		<string>选择用户</string>
+		<key>secondMenuItem2</key>
+		<string>开始训练</string>
+		<key>secondMenuItem3</key>
+		<string>管理数据</string>
+	</dict>
+	<key>english</key>
+	<dict>
+		<key>rootMenuItem1</key>
+		<string>monitor</string>
+		<key>rootMenuItem2</key>
+		<string>adjust</string>
+		<key>secondMenuItem1</key>
+		<string>Select User</string>
+		<key>secondMenuItem2</key>
+		<string>Start Training</string>
+		<key>secondMenuItem3</key>
+		<string>Manage Data</string>
+	</dict>
+</dict>
+</plist>

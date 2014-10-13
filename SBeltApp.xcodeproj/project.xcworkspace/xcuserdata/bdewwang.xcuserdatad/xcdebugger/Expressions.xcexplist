@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ZLBluetoothLEManage respirationWaveformPacket:]:ZLBluetoothLEManage.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ZLBluetoothLEManage ECGWaveformPacket:]:ZLBluetoothLEManage.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ZLChartTrackView drawRect:]:ZLChartTrackView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pBuffer[3]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ZLBluetoothLEManage accelerometerPacket:]:ZLBluetoothLEManage.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

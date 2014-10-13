@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		680476DD1774274800145E9D /* CurledViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 680476D81774274800145E9D /* CurledViewBase.m */; };
+		680476DE1774274800145E9D /* UIButton+Curled.m in Sources */ = {isa = PBXBuildFile; fileRef = 680476DA1774274800145E9D /* UIButton+Curled.m */; };
+		680476DF1774274800145E9D /* UIImageView+Curled.m in Sources */ = {isa = PBXBuildFile; fileRef = 680476DC1774274800145E9D /* UIImageView+Curled.m */; };
+		680476E2177428EE00145E9D /* ZLFreezeManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 680476E1177428EE00145E9D /* ZLFreezeManage.m */; };
+		680476E517743DC600145E9D /* ZLChartTrackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 680476E417743DC600145E9D /* ZLChartTrackView.m */; };
+		680476EE1778099F00145E9D /* Bluetooth-彩色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476E61778099F00145E9D /* Bluetooth-彩色.png */; };
+		680476EF1778099F00145E9D /* Bluetooth-灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476E71778099F00145E9D /* Bluetooth-灰色.png */; };
+		680476F01778099F00145E9D /* Freeze-彩色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476E81778099F00145E9D /* Freeze-彩色.png */; };
+		680476F11778099F00145E9D /* Freeze-灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476E91778099F00145E9D /* Freeze-灰色.png */; };
+		680476F41778099F00145E9D /* Store-彩色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476EC1778099F00145E9D /* Store-彩色.png */; };
+		680476F51778099F00145E9D /* Store-灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476ED1778099F00145E9D /* Store-灰色.png */; };
+		680476F717780A5B00145E9D /* Browse-灰色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476F617780A5B00145E9D /* Browse-灰色.png */; };
+		680476F917780A6100145E9D /* Browse-彩色.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476F817780A6100145E9D /* Browse-彩色.png */; };
+		680476FB1778157D00145E9D /* ios-linen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 680476FA1778157D00145E9D /* ios-linen.jpg */; };
+		680476FF17781A7D00145E9D /* textureBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 680476FE17781A7D00145E9D /* textureBackground.png */; };
+		6804770217781CCA00145E9D /* Setting-彩色1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6804770017781CCA00145E9D /* Setting-彩色1.png */; };
+		6804770317781CCA00145E9D /* Setting-灰色1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6804770117781CCA00145E9D /* Setting-灰色1.png */; };
+		68068A891771BFA000B60524 /* ZLChartFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68068A881771BFA000B60524 /* ZLChartFrameView.m */; };
+		68068A8C1772E9A800B60524 /* ZLSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68068A8B1772E9A800B60524 /* ZLSettingView.m */; };
+		68068A9A17730CD500B60524 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68068A9917730CD500B60524 /* CoreBluetooth.framework */; };
+		68068A9D1773F51C00B60524 /* ZLFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68068A9C1773F51C00B60524 /* ZLFlashView.m */; };
+		680DA6831875A95C000BE47D /* 新协议数据.dat in Resources */ = {isa = PBXBuildFile; fileRef = 680DA6821875A73F000BE47D /* 新协议数据.dat */; };
+		6817547817698C4B0007EA0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6817547717698C4B0007EA0D /* UIKit.framework */; };
+		6817547A17698C4B0007EA0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6817547917698C4B0007EA0D /* Foundation.framework */; };
+		6817547C17698C4B0007EA0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6817547B17698C4B0007EA0D /* CoreGraphics.framework */; };
+		6817548217698C4B0007EA0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6817548017698C4B0007EA0D /* InfoPlist.strings */; };
+		6817548417698C4B0007EA0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6817548317698C4B0007EA0D /* main.m */; };
+		6817548A17698C4B0007EA0D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6817548917698C4B0007EA0D /* Default.png */; };
+		6817548C17698C4B0007EA0D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6817548B17698C4B0007EA0D /* Default@2x.png */; };
+		6817548E17698C4B0007EA0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6817548D17698C4B0007EA0D /* Default-568h@2x.png */; };
+		6817549617698C4C0007EA0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6817549517698C4C0007EA0D /* SenTestingKit.framework */; };
+		6817549717698C4C0007EA0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6817547717698C4B0007EA0D /* UIKit.framework */; };
+		6817549817698C4C0007EA0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6817547917698C4B0007EA0D /* Foundation.framework */; };
+		681754A017698C4C0007EA0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6817549E17698C4C0007EA0D /* InfoPlist.strings */; };
+		681754A317698C4C0007EA0D /* SBeltAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754A217698C4C0007EA0D /* SBeltAppTests.m */; };
+		681754BE17698E580007EA0D /* ClothTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754AF17698E580007EA0D /* ClothTransition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754BF17698E580007EA0D /* DoorsTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754B117698E580007EA0D /* DoorsTransition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754C017698E580007EA0D /* FlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754B317698E580007EA0D /* FlipTransition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754C117698E580007EA0D /* HMGLTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754B517698E580007EA0D /* HMGLTransition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754C217698E580007EA0D /* HMGLTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754B717698E580007EA0D /* HMGLTransitionManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754C317698E580007EA0D /* HMGLTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754B917698E580007EA0D /* HMGLTransitionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754C417698E580007EA0D /* RotateTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754BB17698E580007EA0D /* RotateTransition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754C517698E580007EA0D /* Switch3DTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754BD17698E580007EA0D /* Switch3DTransition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		681754CE176992280007EA0D /* rootMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754CD176992280007EA0D /* rootMenuViewController.m */; };
+		681754D0176992560007EA0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 681754CF176992560007EA0D /* AppDelegate.m */; };
+		681754D21769933C0007EA0D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681754D11769933C0007EA0D /* OpenGLES.framework */; };
+		681754D4176994D70007EA0D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681754D3176994D70007EA0D /* QuartzCore.framework */; };
+		682BA44417845DE100EE83E2 /* ZLPopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BA44317845DE100EE83E2 /* ZLPopInfoView.m */; };
+		683DF7B1181FFD9400815F08 /* TrainingProcedureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 683DF7B0181FFD9400815F08 /* TrainingProcedureManager.m */; };
+		68A02C1017EDC822007999A4 /* ZLPopTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A02C0F17EDC822007999A4 /* ZLPopTextInputView.m */; };
+		68A02C1617EDEB5B007999A4 /* mainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A02C1517EDEB5B007999A4 /* mainNavigationController.m */; };
+		68A2BCE717D73C7600590E5B /* ZLUserManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2BCE617D73C7600590E5B /* ZLUserManageViewController.m */; };
+		68A2BCEA17D73C9400590E5B /* ZLActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2BCE917D73C9300590E5B /* ZLActivityViewController.m */; };
+		68A2BCED17D73CA500590E5B /* ZLDataManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2BCEC17D73CA500590E5B /* ZLDataManageViewController.m */; };
+		68A2BCF517DB571700590E5B /* 10分钟数据.dat in Resources */ = {isa = PBXBuildFile; fileRef = 68A2BCF317DB571700590E5B /* 10分钟数据.dat */; };
+		68A2BCF617DB571700590E5B /* 16分钟数据.dat in Resources */ = {isa = PBXBuildFile; fileRef = 68A2BCF417DB571700590E5B /* 16分钟数据.dat */; };
+		68A2BCF717DB572A00590E5B /* 10分钟数据.dat in Sources */ = {isa = PBXBuildFile; fileRef = 68A2BCF317DB571700590E5B /* 10分钟数据.dat */; };
+		68A2BCF817DB572A00590E5B /* 16分钟数据.dat in Sources */ = {isa = PBXBuildFile; fileRef = 68A2BCF417DB571700590E5B /* 16分钟数据.dat */; };
+		68A402F5176F4D33000F120F /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A402F4176F4D33000F120F /* FXLabel.m */; };
+		68A402F6176F4E28000F120F /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A402F4176F4D33000F120F /* FXLabel.m */; };
+		68A402F9176F53A1000F120F /* menuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A402F8176F53A1000F120F /* menuViewController.m */; };
+		68A402FA176F564E000F120F /* menuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A402F8176F53A1000F120F /* menuViewController.m */; };
+		68A402FD17705931000F120F /* ZLStorageFunctionManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A402FC17705931000F120F /* ZLStorageFunctionManage.m */; };
+		68A402FE17705EC4000F120F /* ZLStorageFunctionManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A402FC17705931000F120F /* ZLStorageFunctionManage.m */; };
+		68A403011770771D000F120F /* ZLTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A403001770771C000F120F /* ZLTreeView.m */; };
+		68A403021770A39F000F120F /* ZLTreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A403001770771C000F120F /* ZLTreeView.m */; };
+		68C8D3D41769D3DD003F18C1 /* strings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68C8D3D31769D3DD003F18C1 /* strings.plist */; };
+		68C8D3D71769DA12003F18C1 /* languageStringManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8D3D61769DA12003F18C1 /* languageStringManage.m */; };
+		68C8D3DB176AD4CC003F18C1 /* utilityComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8D3DA176AD4CC003F18C1 /* utilityComponentView.m */; };
+		68C8D3DE176AE52C003F18C1 /* ZLMonitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8D3DD176AE52C003F18C1 /* ZLMonitorViewController.m */; };
+		68C8D401176AEFB8003F18C1 /* ZLScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8D400176AEFB8003F18C1 /* ZLScrollMenuView.m */; };
+		68C8D404176AF8AE003F18C1 /* ZLDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8D403176AF8AD003F18C1 /* ZLDragView.m */; };
+		68C8D407176B08AD003F18C1 /* ZLChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C8D406176B08AC003F18C1 /* ZLChartView.m */; };
+		68EECC2019E3AE4100A63C3B /* BLEPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EECC1E19E3AE4100A63C3B /* BLEPort.m */; };
+		68EECC2119E3AE4100A63C3B /* BLESerialComManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EECC1F19E3AE4100A63C3B /* BLESerialComManager.m */; };
+		68F3BC1217E35DEC001843EC /* ZLUserInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC1117E35DEC001843EC /* ZLUserInfoObject.m */; };
+		68F3BC1517E35E10001843EC /* ZLConfigureManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC1417E35E10001843EC /* ZLConfigureManage.m */; };
+		68F3BC1B17E36C6A001843EC /* ZLUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC1A17E36C6A001843EC /* ZLUserInfoViewController.m */; };
+		68F3BC6A17E73CEB001843EC /* events.png in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC6417E73BE1001843EC /* events.png */; };
+		68F3BC6B17E73CEB001843EC /* exit.png in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC6517E73BE1001843EC /* exit.png */; };
+		68F3BC6C17E73CEB001843EC /* playAndPause.png in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC6617E73BE1001843EC /* playAndPause.png */; };
+		68F3BC6D17E73F14001843EC /* Setting-彩色1.png in Sources */ = {isa = PBXBuildFile; fileRef = 6804770017781CCA00145E9D /* Setting-彩色1.png */; };
+		68F3BC6E17E73F14001843EC /* Setting-灰色1.png in Sources */ = {isa = PBXBuildFile; fileRef = 6804770117781CCA00145E9D /* Setting-灰色1.png */; };
+		68F3BC6F17E73F14001843EC /* textureBackground.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476FE17781A7D00145E9D /* textureBackground.png */; };
+		68F3BC7017E73F14001843EC /* ios-linen.jpg in Sources */ = {isa = PBXBuildFile; fileRef = 680476FA1778157D00145E9D /* ios-linen.jpg */; };
+		68F3BC7117E73F14001843EC /* Browse-彩色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476F817780A6100145E9D /* Browse-彩色.png */; };
+		68F3BC7217E73F14001843EC /* Browse-灰色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476F617780A5B00145E9D /* Browse-灰色.png */; };
+		68F3BC7317E73F14001843EC /* Bluetooth-彩色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476E61778099F00145E9D /* Bluetooth-彩色.png */; };
+		68F3BC7417E73F14001843EC /* Bluetooth-灰色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476E71778099F00145E9D /* Bluetooth-灰色.png */; };
+		68F3BC7517E73F14001843EC /* Freeze-彩色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476E81778099F00145E9D /* Freeze-彩色.png */; };
+		68F3BC7617E73F14001843EC /* Freeze-灰色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476E91778099F00145E9D /* Freeze-灰色.png */; };
+		68F3BC7717E73F14001843EC /* Store-彩色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476EC1778099F00145E9D /* Store-彩色.png */; };
+		68F3BC7817E73F14001843EC /* Store-灰色.png in Sources */ = {isa = PBXBuildFile; fileRef = 680476ED1778099F00145E9D /* Store-灰色.png */; };
+		68F3BC8017E74346001843EC /* mute.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F3BC7F17E74346001843EC /* mute.png */; };
+		68F3BC8117E7434B001843EC /* mute.png in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC7F17E74346001843EC /* mute.png */; };
+		68F3BC8417E745D6001843EC /* ZLMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC8317E745D6001843EC /* ZLMainView.m */; };
+		68F3BC8717E87F1E001843EC /* ZLEventsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F3BC8617E87F1E001843EC /* ZLEventsSelectView.m */; };
+		68F4DB3C17910436003C4416 /* ZLBluetoothLEManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F4DB3B17910436003C4416 /* ZLBluetoothLEManage.m */; };
+		68F4DB3D17910444003C4416 /* ZLBluetoothLEManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F4DB3B17910436003C4416 /* ZLBluetoothLEManage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6817549917698C4C0007EA0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6817546C17698C4B0007EA0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6817547317698C4B0007EA0D;
+			remoteInfo = SBeltApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		680476D71774274800145E9D /* CurledViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurledViewBase.h; sourceTree = "<group>"; };
+		680476D81774274800145E9D /* CurledViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurledViewBase.m; sourceTree = "<group>"; };
+		680476D91774274800145E9D /* UIButton+Curled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Curled.h"; sourceTree = "<group>"; };
+		680476DA1774274800145E9D /* UIButton+Curled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Curled.m"; sourceTree = "<group>"; };
+		680476DB1774274800145E9D /* UIImageView+Curled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Curled.h"; sourceTree = "<group>"; };
+		680476DC1774274800145E9D /* UIImageView+Curled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Curled.m"; sourceTree = "<group>"; };
+		680476E0177428ED00145E9D /* ZLFreezeManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLFreezeManage.h; sourceTree = "<group>"; };
+		680476E1177428EE00145E9D /* ZLFreezeManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLFreezeManage.m; sourceTree = "<group>"; };
+		680476E317743DC600145E9D /* ZLChartTrackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLChartTrackView.h; sourceTree = "<group>"; };
+		680476E417743DC600145E9D /* ZLChartTrackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLChartTrackView.m; sourceTree = "<group>"; };
+		680476E61778099F00145E9D /* Bluetooth-彩色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bluetooth-彩色.png"; path = "SBeltApp/resource/Bluetooth-彩色.png"; sourceTree = SOURCE_ROOT; };
+		680476E71778099F00145E9D /* Bluetooth-灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bluetooth-灰色.png"; path = "SBeltApp/resource/Bluetooth-灰色.png"; sourceTree = SOURCE_ROOT; };
+		680476E81778099F00145E9D /* Freeze-彩色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Freeze-彩色.png"; path = "SBeltApp/resource/Freeze-彩色.png"; sourceTree = SOURCE_ROOT; };
+		680476E91778099F00145E9D /* Freeze-灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Freeze-灰色.png"; path = "SBeltApp/resource/Freeze-灰色.png"; sourceTree = SOURCE_ROOT; };
+		680476EC1778099F00145E9D /* Store-彩色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Store-彩色.png"; path = "SBeltApp/resource/Store-彩色.png"; sourceTree = SOURCE_ROOT; };
+		680476ED1778099F00145E9D /* Store-灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Store-灰色.png"; path = "SBeltApp/resource/Store-灰色.png"; sourceTree = SOURCE_ROOT; };
+		680476F617780A5B00145E9D /* Browse-灰色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Browse-灰色.png"; path = "SBeltApp/resource/Browse-灰色.png"; sourceTree = SOURCE_ROOT; };
+		680476F817780A6100145E9D /* Browse-彩色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Browse-彩色.png"; path = "SBeltApp/resource/Browse-彩色.png"; sourceTree = SOURCE_ROOT; };
+		680476FA1778157D00145E9D /* ios-linen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ios-linen.jpg"; path = "SBeltApp/resource/ios-linen.jpg"; sourceTree = SOURCE_ROOT; };
+		680476FE17781A7D00145E9D /* textureBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textureBackground.png; path = SBeltApp/resource/textureBackground.png; sourceTree = SOURCE_ROOT; };
+		6804770017781CCA00145E9D /* Setting-彩色1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Setting-彩色1.png"; path = "SBeltApp/resource/Setting-彩色1.png"; sourceTree = SOURCE_ROOT; };
+		6804770117781CCA00145E9D /* Setting-灰色1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Setting-灰色1.png"; path = "SBeltApp/resource/Setting-灰色1.png"; sourceTree = SOURCE_ROOT; };
+		68068A871771BFA000B60524 /* ZLChartFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLChartFrameView.h; sourceTree = "<group>"; };
+		68068A881771BFA000B60524 /* ZLChartFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLChartFrameView.m; sourceTree = "<group>"; };
+		68068A8A1772E9A700B60524 /* ZLSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSettingView.h; sourceTree = "<group>"; };
+		68068A8B1772E9A800B60524 /* ZLSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSettingView.m; sourceTree = "<group>"; };
+		68068A8E17730A6A00B60524 /* ZLBluetoothLEManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLBluetoothLEManage.h; sourceTree = "<group>"; };
+		68068A9917730CD500B60524 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		68068A9B1773F51C00B60524 /* ZLFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLFlashView.h; sourceTree = "<group>"; };
+		68068A9C1773F51C00B60524 /* ZLFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLFlashView.m; sourceTree = "<group>"; };
+		680DA6821875A73F000BE47D /* 新协议数据.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "新协议数据.dat"; sourceTree = "<group>"; };
+		6817547417698C4B0007EA0D /* SBeltApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBeltApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6817547717698C4B0007EA0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6817547917698C4B0007EA0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6817547B17698C4B0007EA0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6817547F17698C4B0007EA0D /* SBeltApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SBeltApp-Info.plist"; sourceTree = "<group>"; };
+		6817548117698C4B0007EA0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6817548317698C4B0007EA0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6817548517698C4B0007EA0D /* SBeltApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SBeltApp-Prefix.pch"; sourceTree = "<group>"; };
+		6817548617698C4B0007EA0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6817548917698C4B0007EA0D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6817548B17698C4B0007EA0D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6817548D17698C4B0007EA0D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6817549417698C4C0007EA0D /* SBeltAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBeltAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6817549517698C4C0007EA0D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		6817549D17698C4C0007EA0D /* SBeltAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SBeltAppTests-Info.plist"; sourceTree = "<group>"; };
+		6817549F17698C4C0007EA0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		681754A117698C4C0007EA0D /* SBeltAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBeltAppTests.h; sourceTree = "<group>"; };
+		681754A217698C4C0007EA0D /* SBeltAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBeltAppTests.m; sourceTree = "<group>"; };
+		681754AE17698E580007EA0D /* ClothTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothTransition.h; sourceTree = "<group>"; };
+		681754AF17698E580007EA0D /* ClothTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothTransition.m; sourceTree = "<group>"; };
+		681754B017698E580007EA0D /* DoorsTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoorsTransition.h; sourceTree = "<group>"; };
+		681754B117698E580007EA0D /* DoorsTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoorsTransition.m; sourceTree = "<group>"; };
+		681754B217698E580007EA0D /* FlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipTransition.h; sourceTree = "<group>"; };
+		681754B317698E580007EA0D /* FlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipTransition.m; sourceTree = "<group>"; };
+		681754B417698E580007EA0D /* HMGLTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGLTransition.h; sourceTree = "<group>"; };
+		681754B517698E580007EA0D /* HMGLTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGLTransition.m; sourceTree = "<group>"; };
+		681754B617698E580007EA0D /* HMGLTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGLTransitionManager.h; sourceTree = "<group>"; };
+		681754B717698E580007EA0D /* HMGLTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGLTransitionManager.m; sourceTree = "<group>"; };
+		681754B817698E580007EA0D /* HMGLTransitionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGLTransitionView.h; sourceTree = "<group>"; };
+		681754B917698E580007EA0D /* HMGLTransitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGLTransitionView.m; sourceTree = "<group>"; };
+		681754BA17698E580007EA0D /* RotateTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateTransition.h; sourceTree = "<group>"; };
+		681754BB17698E580007EA0D /* RotateTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotateTransition.m; sourceTree = "<group>"; };
+		681754BC17698E580007EA0D /* Switch3DTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Switch3DTransition.h; sourceTree = "<group>"; };
+		681754BD17698E580007EA0D /* Switch3DTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Switch3DTransition.m; sourceTree = "<group>"; };
+		681754CC176992280007EA0D /* rootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rootMenuViewController.h; sourceTree = "<group>"; };
+		681754CD176992280007EA0D /* rootMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootMenuViewController.m; sourceTree = "<group>"; };
+		681754CF176992560007EA0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		681754D11769933C0007EA0D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		681754D3176994D70007EA0D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		682BA43C17845A9F00EE83E2 /* BLEPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEPort.h; sourceTree = "<group>"; };
+		682BA43D17845A9F00EE83E2 /* BLESerialComDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLESerialComDefinition.h; sourceTree = "<group>"; };
+		682BA43E17845A9F00EE83E2 /* BLESerialComManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLESerialComManager.h; sourceTree = "<group>"; };
+		682BA44217845DE000EE83E2 /* ZLPopInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPopInfoView.h; sourceTree = "<group>"; };
+		682BA44317845DE100EE83E2 /* ZLPopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPopInfoView.m; sourceTree = "<group>"; };
+		683DF7AF181FFD9400815F08 /* TrainingProcedureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingProcedureManager.h; sourceTree = "<group>"; };
+		683DF7B0181FFD9400815F08 /* TrainingProcedureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingProcedureManager.m; sourceTree = "<group>"; };
+		68A02C0E17EDC822007999A4 /* ZLPopTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPopTextInputView.h; sourceTree = "<group>"; };
+		68A02C0F17EDC822007999A4 /* ZLPopTextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPopTextInputView.m; sourceTree = "<group>"; };
+		68A02C1417EDEB5B007999A4 /* mainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainNavigationController.h; sourceTree = "<group>"; };
+		68A02C1517EDEB5B007999A4 /* mainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainNavigationController.m; sourceTree = "<group>"; };
+		68A2BCE517D73C7600590E5B /* ZLUserManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLUserManageViewController.h; sourceTree = "<group>"; };
+		68A2BCE617D73C7600590E5B /* ZLUserManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLUserManageViewController.m; sourceTree = "<group>"; };
+		68A2BCE817D73C9300590E5B /* ZLActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLActivityViewController.h; sourceTree = "<group>"; };
+		68A2BCE917D73C9300590E5B /* ZLActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLActivityViewController.m; sourceTree = "<group>"; };
+		68A2BCEB17D73CA400590E5B /* ZLDataManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDataManageViewController.h; sourceTree = "<group>"; };
+		68A2BCEC17D73CA500590E5B /* ZLDataManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLDataManageViewController.m; sourceTree = "<group>"; };
+		68A2BCF317DB571700590E5B /* 10分钟数据.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "10分钟数据.dat"; sourceTree = "<group>"; };
+		68A2BCF417DB571700590E5B /* 16分钟数据.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "16分钟数据.dat"; sourceTree = "<group>"; };
+		68A402F3176F4D32000F120F /* FXLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLabel.h; sourceTree = "<group>"; };
+		68A402F4176F4D33000F120F /* FXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLabel.m; sourceTree = "<group>"; };
+		68A402F7176F53A0000F120F /* menuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuViewController.h; sourceTree = "<group>"; };
+		68A402F8176F53A1000F120F /* menuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuViewController.m; sourceTree = "<group>"; };
+		68A402FB17705931000F120F /* ZLStorageFunctionManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLStorageFunctionManage.h; sourceTree = "<group>"; };
+		68A402FC17705931000F120F /* ZLStorageFunctionManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLStorageFunctionManage.m; sourceTree = "<group>"; };
+		68A402FF1770771B000F120F /* ZLTreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTreeView.h; sourceTree = "<group>"; };
+		68A403001770771C000F120F /* ZLTreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTreeView.m; sourceTree = "<group>"; };
+		68C8D3D31769D3DD003F18C1 /* strings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = strings.plist; sourceTree = SOURCE_ROOT; };
+		68C8D3D51769DA12003F18C1 /* languageStringManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = languageStringManage.h; sourceTree = "<group>"; };
+		68C8D3D61769DA12003F18C1 /* languageStringManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = languageStringManage.m; sourceTree = "<group>"; };
+		68C8D3D8176AC8B2003F18C1 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		68C8D3D9176AD4CC003F18C1 /* utilityComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utilityComponentView.h; sourceTree = "<group>"; };
+		68C8D3DA176AD4CC003F18C1 /* utilityComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utilityComponentView.m; sourceTree = "<group>"; };
+		68C8D3DC176AE52C003F18C1 /* ZLMonitorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLMonitorViewController.h; sourceTree = "<group>"; };
+		68C8D3DD176AE52C003F18C1 /* ZLMonitorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLMonitorViewController.m; sourceTree = "<group>"; };
+		68C8D3FB176AE6AB003F18C1 /* sharedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sharedHeader.h; sourceTree = "<group>"; };
+		68C8D3FF176AEFB8003F18C1 /* ZLScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLScrollMenuView.h; sourceTree = "<group>"; };
+		68C8D400176AEFB8003F18C1 /* ZLScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLScrollMenuView.m; sourceTree = "<group>"; };
+		68C8D402176AF8AD003F18C1 /* ZLDragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLDragView.h; sourceTree = "<group>"; };
+		68C8D403176AF8AD003F18C1 /* ZLDragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLDragView.m; sourceTree = "<group>"; };
+		68C8D405176B08AC003F18C1 /* ZLChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLChartView.h; sourceTree = "<group>"; };
+		68C8D406176B08AC003F18C1 /* ZLChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLChartView.m; sourceTree = "<group>"; };
+		68EECC1E19E3AE4100A63C3B /* BLEPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEPort.m; sourceTree = "<group>"; };
+		68EECC1F19E3AE4100A63C3B /* BLESerialComManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLESerialComManager.m; sourceTree = "<group>"; };
+		68F3BC1017E35DEC001843EC /* ZLUserInfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLUserInfoObject.h; sourceTree = "<group>"; };
+		68F3BC1117E35DEC001843EC /* ZLUserInfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLUserInfoObject.m; sourceTree = "<group>"; };
+		68F3BC1317E35E10001843EC /* ZLConfigureManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLConfigureManage.h; sourceTree = "<group>"; };
+		68F3BC1417E35E10001843EC /* ZLConfigureManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLConfigureManage.m; sourceTree = "<group>"; };
+		68F3BC1917E36C6A001843EC /* ZLUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLUserInfoViewController.h; sourceTree = "<group>"; };
+		68F3BC1A17E36C6A001843EC /* ZLUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLUserInfoViewController.m; sourceTree = "<group>"; };
+		68F3BC6417E73BE1001843EC /* events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = events.png; path = SBeltApp/resource/events.png; sourceTree = SOURCE_ROOT; };
+		68F3BC6517E73BE1001843EC /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exit.png; path = SBeltApp/resource/exit.png; sourceTree = SOURCE_ROOT; };
+		68F3BC6617E73BE1001843EC /* playAndPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playAndPause.png; path = SBeltApp/resource/playAndPause.png; sourceTree = SOURCE_ROOT; };
+		68F3BC7F17E74346001843EC /* mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mute.png; path = SBeltApp/resource/mute.png; sourceTree = SOURCE_ROOT; };
+		68F3BC8217E745D6001843EC /* ZLMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLMainView.h; sourceTree = "<group>"; };
+		68F3BC8317E745D6001843EC /* ZLMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLMainView.m; sourceTree = "<group>"; };
+		68F3BC8517E87F1E001843EC /* ZLEventsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLEventsSelectView.h; sourceTree = "<group>"; };
+		68F3BC8617E87F1E001843EC /* ZLEventsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLEventsSelectView.m; sourceTree = "<group>"; };
+		68F4DB3B17910436003C4416 /* ZLBluetoothLEManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLBluetoothLEManage.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6817547117698C4B0007EA0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68068A9A17730CD500B60524 /* CoreBluetooth.framework in Frameworks */,
+				681754D4176994D70007EA0D /* QuartzCore.framework in Frameworks */,
+				681754D21769933C0007EA0D /* OpenGLES.framework in Frameworks */,
+				6817547817698C4B0007EA0D /* UIKit.framework in Frameworks */,
+				6817547A17698C4B0007EA0D /* Foundation.framework in Frameworks */,
+				6817547C17698C4B0007EA0D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6817549017698C4C0007EA0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6817549617698C4C0007EA0D /* SenTestingKit.framework in Frameworks */,
+				6817549717698C4C0007EA0D /* UIKit.framework in Frameworks */,
+				6817549817698C4C0007EA0D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		680476D61774274800145E9D /* curledView */ = {
+			isa = PBXGroup;
+			children = (
+				680476D71774274800145E9D /* CurledViewBase.h */,
+				680476D81774274800145E9D /* CurledViewBase.m */,
+				680476D91774274800145E9D /* UIButton+Curled.h */,
+				680476DA1774274800145E9D /* UIButton+Curled.m */,
+				680476DB1774274800145E9D /* UIImageView+Curled.h */,
+				680476DC1774274800145E9D /* UIImageView+Curled.m */,
+			);
+			path = curledView;
+			sourceTree = "<group>";
+		};
+		6817546B17698C4B0007EA0D = {
+			isa = PBXGroup;
+			children = (
+				68A2BCF217DB571700590E5B /* testData */,
+				681754D51769A2370007EA0D /* resources */,
+				681754C6176990630007EA0D /* classes */,
+				681754AC17698E580007EA0D /* libs */,
+				6817547D17698C4B0007EA0D /* SBeltApp */,
+				6817549B17698C4C0007EA0D /* SBeltAppTests */,
+				6817547617698C4B0007EA0D /* Frameworks */,
+				6817547517698C4B0007EA0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6817547517698C4B0007EA0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6817547417698C4B0007EA0D /* SBeltApp.app */,
+				6817549417698C4C0007EA0D /* SBeltAppTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6817547617698C4B0007EA0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68068A9917730CD500B60524 /* CoreBluetooth.framework */,
+				681754D3176994D70007EA0D /* QuartzCore.framework */,
+				681754D11769933C0007EA0D /* OpenGLES.framework */,
+				6817547717698C4B0007EA0D /* UIKit.framework */,
+				6817547917698C4B0007EA0D /* Foundation.framework */,
+				6817547B17698C4B0007EA0D /* CoreGraphics.framework */,
+				6817549517698C4C0007EA0D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6817547D17698C4B0007EA0D /* SBeltApp */ = {
+			isa = PBXGroup;
+			children = (
+				68C8D3D8176AC8B2003F18C1 /* common.h */,
+				6817548617698C4B0007EA0D /* AppDelegate.h */,
+				681754CF176992560007EA0D /* AppDelegate.m */,
+				6817547E17698C4B0007EA0D /* Supporting Files */,
+			);
+			path = SBeltApp;
+			sourceTree = "<group>";
+		};
+		6817547E17698C4B0007EA0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6817547F17698C4B0007EA0D /* SBeltApp-Info.plist */,
+				6817548017698C4B0007EA0D /* InfoPlist.strings */,
+				6817548317698C4B0007EA0D /* main.m */,
+				6817548517698C4B0007EA0D /* SBeltApp-Prefix.pch */,
+				6817548917698C4B0007EA0D /* Default.png */,
+				6817548B17698C4B0007EA0D /* Default@2x.png */,
+				6817548D17698C4B0007EA0D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6817549B17698C4C0007EA0D /* SBeltAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				681754A117698C4C0007EA0D /* SBeltAppTests.h */,
+				681754A217698C4C0007EA0D /* SBeltAppTests.m */,
+				6817549C17698C4C0007EA0D /* Supporting Files */,
+			);
+			path = SBeltAppTests;
+			sourceTree = "<group>";
+		};
+		6817549C17698C4C0007EA0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6817549D17698C4C0007EA0D /* SBeltAppTests-Info.plist */,
+				6817549E17698C4C0007EA0D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		681754AC17698E580007EA0D /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				682BA43B17845A9F00EE83E2 /* libPackage */,
+				681754AD17698E580007EA0D /* HMGLTransitions */,
+			);
+			name = libs;
+			path = SBeltApp/libs;
+			sourceTree = "<group>";
+		};
+		681754AD17698E580007EA0D /* HMGLTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				681754AE17698E580007EA0D /* ClothTransition.h */,
+				681754AF17698E580007EA0D /* ClothTransition.m */,
+				681754B017698E580007EA0D /* DoorsTransition.h */,
+				681754B117698E580007EA0D /* DoorsTransition.m */,
+				681754B217698E580007EA0D /* FlipTransition.h */,
+				681754B317698E580007EA0D /* FlipTransition.m */,
+				681754B417698E580007EA0D /* HMGLTransition.h */,
+				681754B517698E580007EA0D /* HMGLTransition.m */,
+				681754B617698E580007EA0D /* HMGLTransitionManager.h */,
+				681754B717698E580007EA0D /* HMGLTransitionManager.m */,
+				681754B817698E580007EA0D /* HMGLTransitionView.h */,
+				681754B917698E580007EA0D /* HMGLTransitionView.m */,
+				681754BA17698E580007EA0D /* RotateTransition.h */,
+				681754BB17698E580007EA0D /* RotateTransition.m */,
+				681754BC17698E580007EA0D /* Switch3DTransition.h */,
+				681754BD17698E580007EA0D /* Switch3DTransition.m */,
+			);
+			path = HMGLTransitions;
+			sourceTree = "<group>";
+		};
+		681754C6176990630007EA0D /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				683DF7AE181FFCF900815F08 /* TrainingProcedure */,
+				681754CA176992280007EA0D /* database */,
+				681754CB176992280007EA0D /* UI */,
+				68C8D3D51769DA12003F18C1 /* languageStringManage.h */,
+				68C8D3D61769DA12003F18C1 /* languageStringManage.m */,
+			);
+			name = classes;
+			path = SBeltApp/classes;
+			sourceTree = "<group>";
+		};
+		681754CA176992280007EA0D /* database */ = {
+			isa = PBXGroup;
+			children = (
+				68A402FB17705931000F120F /* ZLStorageFunctionManage.h */,
+				68A402FC17705931000F120F /* ZLStorageFunctionManage.m */,
+				68F3BC1017E35DEC001843EC /* ZLUserInfoObject.h */,
+				68F3BC1117E35DEC001843EC /* ZLUserInfoObject.m */,
+				68F3BC1317E35E10001843EC /* ZLConfigureManage.h */,
+				68F3BC1417E35E10001843EC /* ZLConfigureManage.m */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		681754CB176992280007EA0D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				68F3BC0C17E35B12001843EC /* ViewControllers */,
+				680476D61774274800145E9D /* curledView */,
+				68A402F3176F4D32000F120F /* FXLabel.h */,
+				68A402F4176F4D33000F120F /* FXLabel.m */,
+				68C8D3FB176AE6AB003F18C1 /* sharedHeader.h */,
+				68F3BC8517E87F1E001843EC /* ZLEventsSelectView.h */,
+				68F3BC8617E87F1E001843EC /* ZLEventsSelectView.m */,
+				68A02C0E17EDC822007999A4 /* ZLPopTextInputView.h */,
+				68A02C0F17EDC822007999A4 /* ZLPopTextInputView.m */,
+				68F3BC8217E745D6001843EC /* ZLMainView.h */,
+				68F3BC8317E745D6001843EC /* ZLMainView.m */,
+				68C8D3D9176AD4CC003F18C1 /* utilityComponentView.h */,
+				68C8D3DA176AD4CC003F18C1 /* utilityComponentView.m */,
+				68C8D3FF176AEFB8003F18C1 /* ZLScrollMenuView.h */,
+				68C8D400176AEFB8003F18C1 /* ZLScrollMenuView.m */,
+				68C8D402176AF8AD003F18C1 /* ZLDragView.h */,
+				68C8D403176AF8AD003F18C1 /* ZLDragView.m */,
+				68C8D405176B08AC003F18C1 /* ZLChartView.h */,
+				68C8D406176B08AC003F18C1 /* ZLChartView.m */,
+				68068A871771BFA000B60524 /* ZLChartFrameView.h */,
+				68068A881771BFA000B60524 /* ZLChartFrameView.m */,
+				680476E317743DC600145E9D /* ZLChartTrackView.h */,
+				680476E417743DC600145E9D /* ZLChartTrackView.m */,
+				68A402FF1770771B000F120F /* ZLTreeView.h */,
+				68A403001770771C000F120F /* ZLTreeView.m */,
+				68068A8A1772E9A700B60524 /* ZLSettingView.h */,
+				68068A8B1772E9A800B60524 /* ZLSettingView.m */,
+				68068A8E17730A6A00B60524 /* ZLBluetoothLEManage.h */,
+				68F4DB3B17910436003C4416 /* ZLBluetoothLEManage.m */,
+				68068A9B1773F51C00B60524 /* ZLFlashView.h */,
+				68068A9C1773F51C00B60524 /* ZLFlashView.m */,
+				680476E0177428ED00145E9D /* ZLFreezeManage.h */,
+				680476E1177428EE00145E9D /* ZLFreezeManage.m */,
+				682BA44217845DE000EE83E2 /* ZLPopInfoView.h */,
+				682BA44317845DE100EE83E2 /* ZLPopInfoView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		681754D51769A2370007EA0D /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				68F3BC7F17E74346001843EC /* mute.png */,
+				68F3BC6417E73BE1001843EC /* events.png */,
+				68F3BC6517E73BE1001843EC /* exit.png */,
+				68F3BC6617E73BE1001843EC /* playAndPause.png */,
+				6804770017781CCA00145E9D /* Setting-彩色1.png */,
+				6804770117781CCA00145E9D /* Setting-灰色1.png */,
+				680476FE17781A7D00145E9D /* textureBackground.png */,
+				680476FA1778157D00145E9D /* ios-linen.jpg */,
+				680476F817780A6100145E9D /* Browse-彩色.png */,
+				680476F617780A5B00145E9D /* Browse-灰色.png */,
+				680476E61778099F00145E9D /* Bluetooth-彩色.png */,
+				680476E71778099F00145E9D /* Bluetooth-灰色.png */,
+				680476E81778099F00145E9D /* Freeze-彩色.png */,
+				680476E91778099F00145E9D /* Freeze-灰色.png */,
+				680476EC1778099F00145E9D /* Store-彩色.png */,
+				680476ED1778099F00145E9D /* Store-灰色.png */,
+				68C8D3D31769D3DD003F18C1 /* strings.plist */,
+			);
+			name = resources;
+			path = SBeltApp/resources;
+			sourceTree = "<group>";
+		};
+		682BA43B17845A9F00EE83E2 /* libPackage */ = {
+			isa = PBXGroup;
+			children = (
+				682BA43C17845A9F00EE83E2 /* BLEPort.h */,
+				68EECC1E19E3AE4100A63C3B /* BLEPort.m */,
+				682BA43D17845A9F00EE83E2 /* BLESerialComDefinition.h */,
+				682BA43E17845A9F00EE83E2 /* BLESerialComManager.h */,
+				68EECC1F19E3AE4100A63C3B /* BLESerialComManager.m */,
+			);
+			path = libPackage;
+			sourceTree = "<group>";
+		};
+		683DF7AE181FFCF900815F08 /* TrainingProcedure */ = {
+			isa = PBXGroup;
+			children = (
+				683DF7AF181FFD9400815F08 /* TrainingProcedureManager.h */,
+				683DF7B0181FFD9400815F08 /* TrainingProcedureManager.m */,
+			);
+			name = TrainingProcedure;
+			sourceTree = "<group>";
+		};
+		68A2BCF217DB571700590E5B /* testData */ = {
+			isa = PBXGroup;
+			children = (
+				680DA6821875A73F000BE47D /* 新协议数据.dat */,
+				68A2BCF317DB571700590E5B /* 10分钟数据.dat */,
+				68A2BCF417DB571700590E5B /* 16分钟数据.dat */,
+			);
+			name = testData;
+			path = SBeltApp/testData;
+			sourceTree = "<group>";
+		};
+		68F3BC0C17E35B12001843EC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68A2BCE817D73C9300590E5B /* ZLActivityViewController.h */,
+				68A2BCE917D73C9300590E5B /* ZLActivityViewController.m */,
+				68A2BCE517D73C7600590E5B /* ZLUserManageViewController.h */,
+				68A2BCE617D73C7600590E5B /* ZLUserManageViewController.m */,
+				68F3BC1917E36C6A001843EC /* ZLUserInfoViewController.h */,
+				68F3BC1A17E36C6A001843EC /* ZLUserInfoViewController.m */,
+				68A2BCEB17D73CA400590E5B /* ZLDataManageViewController.h */,
+				68A2BCEC17D73CA500590E5B /* ZLDataManageViewController.m */,
+				68C8D3DC176AE52C003F18C1 /* ZLMonitorViewController.h */,
+				68C8D3DD176AE52C003F18C1 /* ZLMonitorViewController.m */,
+				681754CC176992280007EA0D /* rootMenuViewController.h */,
+				681754CD176992280007EA0D /* rootMenuViewController.m */,
+				68A402F7176F53A0000F120F /* menuViewController.h */,
+				68A402F8176F53A1000F120F /* menuViewController.m */,
+				68A02C1417EDEB5B007999A4 /* mainNavigationController.h */,
+				68A02C1517EDEB5B007999A4 /* mainNavigationController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6817547317698C4B0007EA0D /* SBeltApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 681754A617698C4C0007EA0D /* Build configuration list for PBXNativeTarget "SBeltApp" */;
+			buildPhases = (
+				6817547017698C4B0007EA0D /* Sources */,
+				6817547117698C4B0007EA0D /* Frameworks */,
+				6817547217698C4B0007EA0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SBeltApp;
+			productName = SBeltApp;
+			productReference = 6817547417698C4B0007EA0D /* SBeltApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6817549317698C4C0007EA0D /* SBeltAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 681754A917698C4C0007EA0D /* Build configuration list for PBXNativeTarget "SBeltAppTests" */;
+			buildPhases = (
+				6817548F17698C4C0007EA0D /* Sources */,
+				6817549017698C4C0007EA0D /* Frameworks */,
+				6817549117698C4C0007EA0D /* Resources */,
+				6817549217698C4C0007EA0D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6817549A17698C4C0007EA0D /* PBXTargetDependency */,
+			);
+			name = SBeltAppTests;
+			productName = SBeltAppTests;
+			productReference = 6817549417698C4C0007EA0D /* SBeltAppTests.octest */;
+			productType = "com.apple.product-type.bundle.ocunit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6817546C17698C4B0007EA0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = BDE;
+			};
+			buildConfigurationList = 6817546F17698C4B0007EA0D /* Build configuration list for PBXProject "SBeltApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6817546B17698C4B0007EA0D;
+			productRefGroup = 6817547517698C4B0007EA0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6817547317698C4B0007EA0D /* SBeltApp */,
+				6817549317698C4C0007EA0D /* SBeltAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6817547217698C4B0007EA0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				680DA6831875A95C000BE47D /* 新协议数据.dat in Resources */,
+				6817548217698C4B0007EA0D /* InfoPlist.strings in Resources */,
+				6817548A17698C4B0007EA0D /* Default.png in Resources */,
+				6817548C17698C4B0007EA0D /* Default@2x.png in Resources */,
+				6817548E17698C4B0007EA0D /* Default-568h@2x.png in Resources */,
+				68C8D3D41769D3DD003F18C1 /* strings.plist in Resources */,
+				680476EE1778099F00145E9D /* Bluetooth-彩色.png in Resources */,
+				68F3BC8017E74346001843EC /* mute.png in Resources */,
+				680476EF1778099F00145E9D /* Bluetooth-灰色.png in Resources */,
+				680476F01778099F00145E9D /* Freeze-彩色.png in Resources */,
+				680476F11778099F00145E9D /* Freeze-灰色.png in Resources */,
+				680476F41778099F00145E9D /* Store-彩色.png in Resources */,
+				680476F51778099F00145E9D /* Store-灰色.png in Resources */,
+				680476F717780A5B00145E9D /* Browse-灰色.png in Resources */,
+				680476F917780A6100145E9D /* Browse-彩色.png in Resources */,
+				680476FB1778157D00145E9D /* ios-linen.jpg in Resources */,
+				680476FF17781A7D00145E9D /* textureBackground.png in Resources */,
+				6804770217781CCA00145E9D /* Setting-彩色1.png in Resources */,
+				6804770317781CCA00145E9D /* Setting-灰色1.png in Resources */,
+				68A2BCF517DB571700590E5B /* 10分钟数据.dat in Resources */,
+				68A2BCF617DB571700590E5B /* 16分钟数据.dat in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6817549117698C4C0007EA0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681754A017698C4C0007EA0D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6817549217698C4C0007EA0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6817547017698C4B0007EA0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F3BC8717E87F1E001843EC /* ZLEventsSelectView.m in Sources */,
+				68F3BC8117E7434B001843EC /* mute.png in Sources */,
+				68F3BC6D17E73F14001843EC /* Setting-彩色1.png in Sources */,
+				68F3BC6E17E73F14001843EC /* Setting-灰色1.png in Sources */,
+				68F3BC6F17E73F14001843EC /* textureBackground.png in Sources */,
+				68F3BC7017E73F14001843EC /* ios-linen.jpg in Sources */,
+				68F3BC7117E73F14001843EC /* Browse-彩色.png in Sources */,
+				68F3BC7217E73F14001843EC /* Browse-灰色.png in Sources */,
+				68F3BC7317E73F14001843EC /* Bluetooth-彩色.png in Sources */,
+				68EECC2119E3AE4100A63C3B /* BLESerialComManager.m in Sources */,
+				68F3BC7417E73F14001843EC /* Bluetooth-灰色.png in Sources */,
+				68F3BC7517E73F14001843EC /* Freeze-彩色.png in Sources */,
+				68F3BC7617E73F14001843EC /* Freeze-灰色.png in Sources */,
+				68F3BC7717E73F14001843EC /* Store-彩色.png in Sources */,
+				683DF7B1181FFD9400815F08 /* TrainingProcedureManager.m in Sources */,
+				68F3BC7817E73F14001843EC /* Store-灰色.png in Sources */,
+				68F3BC6A17E73CEB001843EC /* events.png in Sources */,
+				68F3BC6B17E73CEB001843EC /* exit.png in Sources */,
+				68F3BC6C17E73CEB001843EC /* playAndPause.png in Sources */,
+				68A2BCF717DB572A00590E5B /* 10分钟数据.dat in Sources */,
+				68A2BCF817DB572A00590E5B /* 16分钟数据.dat in Sources */,
+				68F4DB3D17910444003C4416 /* ZLBluetoothLEManage.m in Sources */,
+				68A403021770A39F000F120F /* ZLTreeView.m in Sources */,
+				68A402FE17705EC4000F120F /* ZLStorageFunctionManage.m in Sources */,
+				68A402FA176F564E000F120F /* menuViewController.m in Sources */,
+				68A402F6176F4E28000F120F /* FXLabel.m in Sources */,
+				6817548417698C4B0007EA0D /* main.m in Sources */,
+				681754BE17698E580007EA0D /* ClothTransition.m in Sources */,
+				681754BF17698E580007EA0D /* DoorsTransition.m in Sources */,
+				681754C017698E580007EA0D /* FlipTransition.m in Sources */,
+				681754C117698E580007EA0D /* HMGLTransition.m in Sources */,
+				681754C217698E580007EA0D /* HMGLTransitionManager.m in Sources */,
+				68F3BC1B17E36C6A001843EC /* ZLUserInfoViewController.m in Sources */,
+				681754C317698E580007EA0D /* HMGLTransitionView.m in Sources */,
+				68A02C1617EDEB5B007999A4 /* mainNavigationController.m in Sources */,
+				681754C417698E580007EA0D /* RotateTransition.m in Sources */,
+				681754C517698E580007EA0D /* Switch3DTransition.m in Sources */,
+				681754CE176992280007EA0D /* rootMenuViewController.m in Sources */,
+				681754D0176992560007EA0D /* AppDelegate.m in Sources */,
+				68C8D3D71769DA12003F18C1 /* languageStringManage.m in Sources */,
+				68C8D3DB176AD4CC003F18C1 /* utilityComponentView.m in Sources */,
+				68C8D3DE176AE52C003F18C1 /* ZLMonitorViewController.m in Sources */,
+				68C8D401176AEFB8003F18C1 /* ZLScrollMenuView.m in Sources */,
+				68C8D404176AF8AE003F18C1 /* ZLDragView.m in Sources */,
+				68C8D407176B08AD003F18C1 /* ZLChartView.m in Sources */,
+				68F3BC1217E35DEC001843EC /* ZLUserInfoObject.m in Sources */,
+				68068A891771BFA000B60524 /* ZLChartFrameView.m in Sources */,
+				68EECC2019E3AE4100A63C3B /* BLEPort.m in Sources */,
+				68068A8C1772E9A800B60524 /* ZLSettingView.m in Sources */,
+				68068A9D1773F51C00B60524 /* ZLFlashView.m in Sources */,
+				68A02C1017EDC822007999A4 /* ZLPopTextInputView.m in Sources */,
+				68F3BC8417E745D6001843EC /* ZLMainView.m in Sources */,
+				680476DD1774274800145E9D /* CurledViewBase.m in Sources */,
+				680476DE1774274800145E9D /* UIButton+Curled.m in Sources */,
+				680476DF1774274800145E9D /* UIImageView+Curled.m in Sources */,
+				680476E2177428EE00145E9D /* ZLFreezeManage.m in Sources */,
+				680476E517743DC600145E9D /* ZLChartTrackView.m in Sources */,
+				682BA44417845DE100EE83E2 /* ZLPopInfoView.m in Sources */,
+				68F3BC1517E35E10001843EC /* ZLConfigureManage.m in Sources */,
+				68A2BCE717D73C7600590E5B /* ZLUserManageViewController.m in Sources */,
+				68A2BCEA17D73C9400590E5B /* ZLActivityViewController.m in Sources */,
+				68A2BCED17D73CA500590E5B /* ZLDataManageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6817548F17698C4C0007EA0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681754A317698C4C0007EA0D /* SBeltAppTests.m in Sources */,
+				68A402F5176F4D33000F120F /* FXLabel.m in Sources */,
+				68A402F9176F53A1000F120F /* menuViewController.m in Sources */,
+				68A402FD17705931000F120F /* ZLStorageFunctionManage.m in Sources */,
+				68A403011770771D000F120F /* ZLTreeView.m in Sources */,
+				68F4DB3C17910436003C4416 /* ZLBluetoothLEManage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6817549A17698C4C0007EA0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6817547317698C4B0007EA0D /* SBeltApp */;
+			targetProxy = 6817549917698C4C0007EA0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6817548017698C4B0007EA0D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6817548117698C4B0007EA0D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6817549E17698C4C0007EA0D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6817549F17698C4C0007EA0D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		681754A417698C4C0007EA0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dd7bda0a-1eb4-4667-963a-0c6383b2591f";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
+			};
+			name = Debug;
+		};
+		681754A517698C4C0007EA0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18cab4da-e933-40ea-ba46-858c2737dc52";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
+			};
+			name = Release;
+		};
+		681754A717698C4C0007EA0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
+				INFOPLIST_FILE = "SBeltApp/SBeltApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SBeltApp/libs/BLETTMLib\"",
+					"\"$(SRCROOT)/SBeltApp/libs/libPackage\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dd7bda0a-1eb4-4667-963a-0c6383b2591f";
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		681754A817698C4C0007EA0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
+				INFOPLIST_FILE = "SBeltApp/SBeltApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SBeltApp/libs/BLETTMLib\"",
+					"\"$(SRCROOT)/SBeltApp/libs/libPackage\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18cab4da-e933-40ea-ba46-858c2737dc52";
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		681754AA17698C4C0007EA0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SBeltApp.app/SBeltApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
+				INFOPLIST_FILE = "SBeltAppTests/SBeltAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		681754AB17698C4C0007EA0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SBeltApp.app/SBeltApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
+				INFOPLIST_FILE = "SBeltAppTests/SBeltAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6817546F17698C4B0007EA0D /* Build configuration list for PBXProject "SBeltApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				681754A417698C4C0007EA0D /* Debug */,
+				681754A517698C4C0007EA0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		681754A617698C4C0007EA0D /* Build configuration list for PBXNativeTarget "SBeltApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				681754A717698C4C0007EA0D /* Debug */,
+				681754A817698C4C0007EA0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		681754A917698C4C0007EA0D /* Build configuration list for PBXNativeTarget "SBeltAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				681754AA17698C4C0007EA0D /* Debug */,
+				681754AB17698C4C0007EA0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6817546C17698C4B0007EA0D /* Project object */;
+}
