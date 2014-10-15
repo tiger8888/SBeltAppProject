@@ -136,9 +136,9 @@
     
     ZLMonitorVC = [[ZLMonitorViewController alloc] init];
     
-    [[HMGLTransitionManager sharedTransitionManager] setTransition:[[RotateTransition alloc] init]];
-    [[HMGLTransitionManager sharedTransitionManager] presentModalViewController:ZLMonitorVC onViewController:self];
-    
+//    [[HMGLTransitionManager sharedTransitionManager] setTransition:[[RotateTransition alloc] init]];
+//    [[HMGLTransitionManager sharedTransitionManager] presentModalViewController:ZLMonitorVC onViewController:self];
+  [self.navigationController pushViewController:ZLMonitorVC animated:YES];
 }
 -(void)enterSecondaryMenu{
     menuViewController *secondaryMenuVC = [[menuViewController alloc] init];

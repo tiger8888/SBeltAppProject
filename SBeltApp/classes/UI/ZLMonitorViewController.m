@@ -51,6 +51,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+  
+}
+
 #pragma mark Gesture Recognizer Action
 -(void)longPressAction:(UIGestureRecognizer *)gestureRecognizer{
     if (bToolBarOpen == NO) {
