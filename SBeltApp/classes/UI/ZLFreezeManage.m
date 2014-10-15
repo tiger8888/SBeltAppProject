@@ -70,7 +70,27 @@
     
     return self;
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  [self exitFromFreezeManage];
+}
+- (void)image:(UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
+{
+  UIAlertView *alertView;
+  if(error == nil)
+  {
+    alertView = [[UIAlertView alloc] initWithTitle:@"图片保存成功" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+  }
+  else
+  {
+    alertView = [[UIAlertView alloc] initWithTitle:@"图片保存失败" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+  }
+  [alertView show];
+}
 -(void)storeImageIntoLibrary{
+  
+  UIImageWriteToSavedPhotosAlbum(_img, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
 }
 -(void)exitFromFreezeManage{

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZLFreezeManage : UIView{
+@interface ZLFreezeManage : UIView<UIAlertViewDelegate>
+{
     UIImage *_img;
     UIImageView *freezeImgView;
 }

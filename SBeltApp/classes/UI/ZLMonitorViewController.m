@@ -37,6 +37,7 @@
 @synthesize heartRateTrack,breathRateTrack;
 @synthesize dragView;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,6 +50,7 @@
     }
     return self;
 }
+
 #pragma mark Gesture Recognizer Action
 -(void)longPressAction:(UIGestureRecognizer *)gestureRecognizer{
     if (bToolBarOpen == NO) {
@@ -412,6 +414,7 @@ NSTimer *writeLoopTimer;
 }
 -(void)freezeFunction{
     NSLog(@"freezeFunction");
+  [self shortPressAction:nil];
     UIImage *freezeImg = [self getImageFromView:self.view];
    
     ZLFreezeManage *freezeMgr = [ZLFreezeManage freezeManageWithImge:freezeImg];

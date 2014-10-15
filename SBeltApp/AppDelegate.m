@@ -20,7 +20,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
-    
+  
+  
     rootMenuViewController *rootMenuVC = [[rootMenuViewController alloc] init];
     
     navigationController = [[UINavigationController alloc] initWithRootViewController:rootMenuVC];
@@ -29,6 +30,7 @@
 //    ZLActivityVC = [[ZLActivityViewController alloc] init];
     
     self.window.rootViewController = navigationController;
+    navigationController.navigationBar.translucent = NO;
     //[navigationController pushViewController:rootMenuVC animated:YES];
     [navigationController setNavigationBarHidden:NO];
     

@@ -52,6 +52,7 @@
     
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
+  UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     menuView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 300, 2*HEIGHT_OF_CELL) style:UITableViewStylePlain];
     menuView.center = CGPointMake(320/2, 460/2);
     menuView.delegate = self;

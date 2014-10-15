@@ -12,20 +12,24 @@
 	<dict>
 		<key>6BC6DEA304EC8E4551091DB465ED6A3304817555</key>
 		<string>https://github.com/LevinYan/SBeltApp.git</string>
+		<key>8B3765AB44F688277162A439EF9318F23B85B00F</key>
+		<string>https://github.com/LevinYan/SBeltAppProject.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SBeltApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6BC6DEA304EC8E4551091DB465ED6A3304817555</key>
+		<string>../../../SBeltApp</string>
+		<key>8B3765AB44F688277162A439EF9318F23B85B00F</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/LevinYan/SBeltApp.git</string>
+	<string>https://github.com/LevinYan/SBeltAppProject.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6BC6DEA304EC8E4551091DB465ED6A3304817555</string>
+	<string>8B3765AB44F688277162A439EF9318F23B85B00F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -43,6 +47,14 @@
 			<string>6BC6DEA304EC8E4551091DB465ED6A3304817555</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SBeltApp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8B3765AB44F688277162A439EF9318F23B85B00F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SBeltAppProject</string>
 		</dict>
 	</array>
 </dict>
