@@ -397,7 +397,7 @@ static unsigned int   breathRateSampleCount = 0;
     
     printf("Respiration original : 0x%2x,0x%2x\n",temp[12],temp[11]);
     short int respiration = temp[12] * 0x0100 + temp[11];
-   
+  
 
         printf("real respiration : %d\n",respiration);
         
@@ -406,8 +406,12 @@ static unsigned int   breathRateSampleCount = 0;
         if (breathRateSampleCount>=samplesBufferSize) {
             breathRateSampleCount = 0;
         }
-        
-        
+  
+        activitySample[activitySampleCount++] = temp[47];
+        if(activitySampleCount >= samplesBufferSize)
+        {
+          activitySampleCount = 0;
+        }
     
     
     
@@ -547,7 +551,7 @@ static unsigned int   breathRateSampleCount = 0;
     [self respirationWaveformPacket:[payload subdataWithRange:NSMakeRange(41, 10)]];
 
     //accelerometer
-    [self accelerometerPacket:[payload subdataWithRange:NSMakeRange(51, 30)]];
+    //[self accelerometerPacket:[payload subdataWithRange:NSMakeRange(51, 30)]];
     
     printf("_PDPPayloadParser _end_\n");
 }
@@ -659,7 +663,7 @@ static unsigned int   breathRateSampleCount = 0;
     
     
     
-    [self storeActivityDataIntoMonitorView:accelerometerData];
+    //[self storeActivityDataIntoMonitorView:accelerometerData];
     if (bDataStoring) {
         [[ZLStorageFunctionManage sharedInstance] storeIntoAccelerometerWaveDataFile:[NSData dataWithBytes:accelerometerData length:24*2]];
     }
@@ -835,16 +839,17 @@ int  loc = 0;
     
     //activity
     static float activityToUI = 0.0;
-    for (int i = 0; i<activitySampleCount; i++) {
-            printf("activity sample in update UI %d\n",activitySample[i]);
-        
-        activityToUI = activitySample[i];
-        //0~887~1774
-        int yUILocation = activitySample[i]/1774.0*140.0;
-        NSLog(@"yUILocation = %d",yUILocation);
-            [ZLMonitorVC.ActivityTrack addValueToBuffer:yUILocation];
-            [ZLMonitorVC.ActivityTrack setNeedsDisplay];
-    }
+  activityToUI = activitySample[activitySampleCount - 1]/10;
+//    for (int i = 0; i<activitySampleCount; i++) {
+//            printf("activity sample in update UI %d\n",activitySample[i]);
+//        
+//        activityToUI = activitySample[i];
+//        //0~887~1774
+//        int yUILocation = activitySample[i]/1774.0*140.0;
+//        NSLog(@"yUILocation = %d",yUILocation);
+//            [ZLMonitorVC.ActivityTrack addValueToBuffer:yUILocation];
+//            [ZLMonitorVC.ActivityTrack setNeedsDisplay];
+//    }
     activitySampleCount = 0;
     
     
