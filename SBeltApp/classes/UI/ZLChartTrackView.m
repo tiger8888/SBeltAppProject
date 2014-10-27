@@ -44,11 +44,11 @@
     NSValue *valuePoint = [NSValue valueWithCGPoint:CGPointMake(locationX, value)];
   
     [pointsBuffer addObject:valuePoint];
-    if (pointsBuffer.count >= self.frame.size.width/scaleToMoveX) {
+    if (pointsBuffer.count >= (self.frame.size.width)/scaleToMoveX) {
         [pointsBuffer removeAllObjects];
         locationX = 0;
     }
-    //[self setNeedsDisplay];
+    [self setNeedsDisplay];
 }
 -(void)setTrackColor:(UIColor *)color{
     trackColor = color;

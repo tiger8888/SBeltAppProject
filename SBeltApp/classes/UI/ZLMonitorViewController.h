@@ -40,6 +40,7 @@
     //ZLDragView          *dragView;
 }
 
+@property (strong, nonatomic) ZLChartFrameView *actiFrameView;
 @property (strong,nonatomic) ZLChartFrameView *heartRateFrameView;
 @property (strong,nonatomic) ZLChartFrameView *breatheRateFrameView;
 

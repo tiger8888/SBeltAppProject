@@ -713,21 +713,24 @@ static BLESerialComManager *myInstance;
     [self sendCommand:CMD_ENTER_TTM toPort:port];
 }
 
--(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
+{
+
     NSLog(@"recevied value %s of characteristic %s ",[characteristic.value.description UTF8String],[self CBUUIDToString:characteristic.UUID]);
     BLEPort *port = [self getPortByPeripheral:peripheral];
     int characUUID = [self CBUUIDToInt:characteristic.UUID];
     switch (characUUID) {
-        case INT_CHARACTERISTIC_ID_COMMAND:
-            [self commandCallback:characteristic.value fromPort:port];
-            break;
-        case INT_CHARACTERISTIC_ID_DATA:
-            [self dataCallBack:characteristic.value fromPort:port];
-            break;
+      case INT_CHARACTERISTIC_ID_COMMAND:
+        [self commandCallback:characteristic.value fromPort:port];
+        break;
+      case INT_CHARACTERISTIC_ID_DATA:
+        [self dataCallBack:characteristic.value fromPort:port];
+        break;
         
-        default:
-            break;
+      default:
+        break;
     }
+
 }
 
 

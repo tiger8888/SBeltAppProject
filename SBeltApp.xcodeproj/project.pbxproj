@@ -853,8 +853,8 @@
 		681754A717698C4C0007EA0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
 				INFOPLIST_FILE = "SBeltApp/SBeltApp-Info.plist";
@@ -867,7 +867,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dd7bda0a-1eb4-4667-963a-0c6383b2591f";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7bc77f97-4d8f-4952-8ce5-4bc3d76d6c51";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -877,7 +877,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou mobile brother Communication Technology Co., Ltd.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
 				INFOPLIST_FILE = "SBeltApp/SBeltApp-Info.plist";
@@ -890,7 +890,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18cab4da-e933-40ea-ba46-858c2737dc52";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ca8b8ca5-bd50-4152-bace-9606368391b9";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

@@ -21,7 +21,7 @@
 
 #define ECG_Frame_Color         ([UIColor colorWithRed:0.0/255.0 green:139.0/255.0 blue:69.0/255.0 alpha:1.0])
 #define Respiration_Frame_Color ([UIColor colorWithRed:176.0/255.0 green:48.0/255.0 blue:96.0/255.0 alpha:1.0])
-#define Activity_Frame_Color    ([UIColor colorWithRed:70.0/255.0 green:130.0/255.0 blue:180.0/255.0 alpha:1.0])
+#define Activity_Frame_Color    ([UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0])
 #define HeartRate_Frame_Color   ([UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0])
 #define BreathRate_Frame_Color  HeartRate_Frame_Color//([UIColor colorWithRed:255.0/255.0 green:165.0/255.0 blue:0.0/255.0 alpha:1.0])
 
@@ -29,6 +29,8 @@
 @interface ZLMonitorViewController ()
 {
   ZLScrollMenuView *toolbarMenu;
+  UIButton *ECGSelectScaleBtn;
+  UIButton *RESPSelectScaleBtn;
 }
 @end
 
@@ -50,6 +52,7 @@
     }
     return self;
 }
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -171,56 +174,108 @@
 
 
 -(void)initFrameView{
-    
-    //heartRate
-      self.heartRateFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
-    [self.heartRateFrameView setFrameColor:HeartRate_Frame_Color];
-    [self.heartRateFrameView setTitle:@"HR"];
-    [self.heartRateFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.heartRateFrameView.frame.size.width/6.0/5.0];
-    self.heartRateFrameView.backgroundColor = DisplayArea_Color;
-    self.heartRateFrameView.center = CGPointMake(self.heartRateFrameView.center.x, self.heartRateFrameView.center.y);
-    
-    //breathe rate
-    
-    self.breatheRateFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
-    [self.breatheRateFrameView setFrameColor:BreathRate_Frame_Color];
-    [self.breatheRateFrameView setTitle:@"BR"];
-    [self.breatheRateFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.breatheRateFrameView.frame.size.width/6.5/5.0];
-    self.breatheRateFrameView.backgroundColor = DisplayArea_Color;
-    self.breatheRateFrameView.center = CGPointMake(self.breatheRateFrameView.center.x, self.breatheRateFrameView.center.y);
+  
+  //ACTI Frame view
+  self.actiFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
+  [self.actiFrameView setFrameColor:HeartRate_Frame_Color];
+  [self.actiFrameView setTitle:@"ACTI"];
+  [self.actiFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.heartRateFrameView.frame.size.width/6.0/5.0];
+  self.actiFrameView.backgroundColor = DisplayArea_Color;
+  self.actiFrameView.center = CGPointMake(self.actiFrameView.center.x, self.actiFrameView.center.y);
+  
+  
+  //heartRate
+    self.heartRateFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
+  [self.heartRateFrameView setFrameColor:HeartRate_Frame_Color];
+  [self.heartRateFrameView setTitle:@"HR"];
+  [self.heartRateFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.heartRateFrameView.frame.size.width/6.0/5.0];
+  self.heartRateFrameView.backgroundColor = DisplayArea_Color;
+  self.heartRateFrameView.center = CGPointMake(self.heartRateFrameView.center.x, self.heartRateFrameView.center.y);
+  
+  //breathe rate
+  
+  self.breatheRateFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
+  [self.breatheRateFrameView setFrameColor:BreathRate_Frame_Color];
+  [self.breatheRateFrameView setTitle:@"BR"];
+  [self.breatheRateFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.breatheRateFrameView.frame.size.width/6.5/5.0];
+  self.breatheRateFrameView.backgroundColor = DisplayArea_Color;
+  self.breatheRateFrameView.center = CGPointMake(self.breatheRateFrameView.center.x, self.breatheRateFrameView.center.y);
 
 }
 
 
+- (void)ECGScaleSelected:(id)sender
+{
+  UIButton *btn = sender;
+  static CGFloat scale = 1;
+  scale /= 2;
+  if(scale == (1/8.0f))
+    scale = 1;
+  
+  [ECGTrack setScaleOfX:scale/2];
+  
+  if(scale == 1)
+    [btn setTitle:@"1" forState:UIControlStateNormal];
+  else if(scale == (1/2.0f))
+    [btn setTitle:@"1/2" forState:UIControlStateNormal];
+  else
+    [btn setTitle:@"1/4" forState:UIControlStateNormal];
+}
 
+- (void)RESPScaleSelected:(id)sender
+{
+  UIButton *btn = sender;
+  static CGFloat scale = 1;
+  scale /= 2;
+  if(scale == (1/8.0f))
+    scale = 1;
+  
+  [RespirationTrack setScaleOfX:scale];
+  
+  if(scale == 1)
+    [btn setTitle:@"1" forState:UIControlStateNormal];
+  else if(scale == (1/2.0f))
+    [btn setTitle:@"1/2" forState:UIControlStateNormal];
+  else
+    [btn setTitle:@"1/4" forState:UIControlStateNormal];
+
+}
 -(void)initTrackView{
     
-    ECGTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
-    ECGTrack.backgroundColor = [UIColor clearColor];
-    ECGTrack.center = CGPointMake(320/2, ECGTrack.center.y);
-    [ECGTrack setScaleOfX:1];
-    
-    
-    
-    RespirationTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
-    RespirationTrack.backgroundColor = [UIColor clearColor];
-    RespirationTrack.center = CGPointMake(320/2, RespirationTrack.center.y);
-    [RespirationTrack setScaleOfX:2];
-    
-    ActivityTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
-    ActivityTrack.backgroundColor = [UIColor clearColor];
-    ActivityTrack.center = CGPointMake(320/2, ActivityTrack.center.y);
-    [ActivityTrack setScaleOfX:2];
-    
-    heartRateTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24+24+10, 2, 320-8-24, 140-5)];
-    heartRateTrack.backgroundColor = [UIColor clearColor];
-    heartRateTrack.center = CGPointMake(320/2+10, heartRateTrack.center.y);
-    [heartRateTrack setScaleOfX:1];
-    
-    breathRateTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24+24+10, 2, 320-8-24, 140-5)];
-    breathRateTrack.backgroundColor = [UIColor clearColor];
-    breathRateTrack.center = CGPointMake(320/2+10, breathRateTrack.center.y);
-    [breathRateTrack setScaleOfX:1];
+  ECGTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
+  ECGTrack.backgroundColor = [UIColor clearColor];
+  ECGTrack.center = CGPointMake(320/2, ECGTrack.center.y);
+  [ECGTrack setScaleOfX:0.5];
+  ECGSelectScaleBtn = [[UIButton alloc] initWithFrame:CGRectMake(ECGTrack.frame.size.width - 74, 20, 64, 44)];
+  [ECGSelectScaleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  [ECGSelectScaleBtn setTitle:@"1" forState:UIControlStateNormal];
+  [ECGSelectScaleBtn addTarget:self action:@selector(ECGScaleSelected:) forControlEvents:UIControlEventTouchDown];
+  [ECGTrack addSubview:ECGSelectScaleBtn];
+
+  
+  
+  RespirationTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
+  RespirationTrack.backgroundColor = [UIColor clearColor];
+  RespirationTrack.center = CGPointMake(320/2, RespirationTrack.center.y);
+  [RespirationTrack setScaleOfX:1];
+  RESPSelectScaleBtn = [[UIButton alloc] initWithFrame:CGRectMake(RespirationTrack.frame.size.width - 74, 10, 64, 44)];
+  [RESPSelectScaleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  [RESPSelectScaleBtn setTitle:@"1" forState:UIControlStateNormal];
+  [RESPSelectScaleBtn addTarget:self action:@selector(RESPScaleSelected:) forControlEvents:UIControlEventTouchDown];
+  [RespirationTrack addSubview:RESPSelectScaleBtn];
+  
+  
+  
+  
+  heartRateTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24+24+10, 2, 320-8-24, 140-5)];
+  heartRateTrack.backgroundColor = [UIColor clearColor];
+  heartRateTrack.center = CGPointMake(320/2+10, heartRateTrack.center.y);
+  [heartRateTrack setScaleOfX:1];
+  
+  breathRateTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24+24+10, 2, 320-8-24, 140-5)];
+  breathRateTrack.backgroundColor = [UIColor clearColor];
+  breathRateTrack.center = CGPointMake(320/2+10, breathRateTrack.center.y);
+  [breathRateTrack setScaleOfX:1];
     
 }
 /*************/
@@ -659,6 +714,7 @@ float respGain = 1.0;
         [chartView setParams_VInterval:4.0 hInterval:chartView.frame.size.width/10/5];
         chartView.backgroundColor = DisplayArea_Color;
         chartView.center = CGPointMake(320/2, chartView.center.y);
+      
         [scrollContainer addSubview:chartView];
         
         //track view
@@ -669,6 +725,7 @@ float respGain = 1.0;
         
     
         [self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:Activity_Frame_Color];
+      //[self drawHRBRTimeScaleInView:scrollContainer withInterva:self.actiFrameView.frame.size.width/6.0 withTextColor:Activity_Frame_Color inStartPoint:CGPointMake(self.actiFrameView.frame.origin.x, self.actiFrameView.frame.origin.y + self.actiFrameView.frame.size.height + 6)];
     }
     if (indexPath.row == 3) {//heart rate
         
