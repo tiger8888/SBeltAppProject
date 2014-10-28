@@ -70,9 +70,9 @@ typedef struct _generalDataPackage{
 
 -(BOOL)storeIntoGDPDataFile:(NSData *)GDPStream;//原始二进制流
 -(BOOL)storeIntoPDPDataFile:(NSData *)PDPStream;//原始二进制流
--(BOOL)storeIntoECGWaveDataFile:(NSData *)ecgWaveData;
--(BOOL)storeIntoRespirationWaveDataFile:(NSData *)respirationWaveData;
--(BOOL)storeIntoAccelerometerWaveDataFile:(NSData *)accelerometerWaveData;
+-(BOOL)storeIntoECGWaveDataFile:(UInt8)seqNum data:(NSData *)ecgWaveData;
+-(BOOL)storeIntoRespirationWaveDataFile:(UInt8)seqNum data:(NSData *)respirationWaveData;
+-(BOOL)storeIntoAccelerometerWaveDataFile:(UInt8)seqNum data:(NSData *)accelerometerWaveData;
 
 
 

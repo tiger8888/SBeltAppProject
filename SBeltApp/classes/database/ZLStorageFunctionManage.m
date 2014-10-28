@@ -87,19 +87,19 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
     accWaveDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:accDataSuffix]];
     [self createFileWithPath:accWaveDataFilePath];
-    [@"Year-Month-Day Hour:Minute:Second:MS X-axis,Y-axis,Z-axis\n" writeToFile:accWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"SeqNum Year-Month-Day Hour:Minute:Second:MS X-axis,Y-axis,Z-axis\n" writeToFile:accWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     
     //NSLog(accDataFilePath);
     
     breathWaveDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:breathWaveDataSuffix]];
     [self createFileWithPath:breathWaveDataFilePath];
-    [@"Year-Month-Day Hour:Minute:Second:MS Breath wave data\n" writeToFile:breathWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"SeqNum  Year-Month-Day Hour:Minute:Second:MS Breath wave data\n" writeToFile:breathWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     
     //NSLog(breathWaveDataFilePath);
     
     ecgWaveDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:ecgWavecDataSuffix]];
     [self createFileWithPath:ecgWaveDataFilePath];
-    [@"Year-Month-Day Hour:Minute:Second:MS ECG data\n" writeToFile:ecgWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"SeqNum  Year-Month-Day Hour:Minute:Second:MS   ECG data\n" writeToFile:ecgWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     
    //NSLog(ecgDataFilePath);
     
@@ -211,22 +211,29 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
     return YES;
 }
--(BOOL)storeIntoECGWaveDataFile:(NSData *)ecgWaveData{
+-(BOOL)storeIntoECGWaveDataFile:(UInt8)seqNum data:(NSData *)ecgWaveData
+{
     if (!ecgWaveDataFilePath) {
         NSLog(@"invalid ecg wave Data File Path");
         return NO;
     }
-    NSMutableString *timeStr = [NSMutableString stringWithString:[self getCurrentTimeString]];
+    NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d       ", seqNum];
+    [timeStr appendString:[self getCurrentTimeString]];
     [timeStr appendString:@"\n"];
-    
-    
-    
-    for (int i=0; i<ecgWaveData.length/2; i++) {
+  
+    for (int i=0; i<ecgWaveData.length/2; i++)
+    {
+      for (uint j = 0; j < 50; j++)
+      {
+        [timeStr appendString:@" "];
+      }
+      
         NSData *one = [ecgWaveData subdataWithRange:NSMakeRange(i*2, 2)];
         unsigned short ecgData;
         [one getBytes:&ecgData length:2];
         [timeStr appendString:[NSString stringWithFormat:@"%d",ecgData]];
         [timeStr appendString:@"\n"];
+      
     }
     
     
@@ -238,18 +245,25 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
     return YES;
 }
--(BOOL)storeIntoRespirationWaveDataFile:(NSData *)respirationWaveData{
+-(BOOL)storeIntoRespirationWaveDataFile:(UInt8)seqNum data:(NSData *)respirationWaveData
+{
     if (!breathWaveDataFilePath) {
         NSLog(@"invalid breath wave Data File Path");
         return NO;
     }
     
-    NSMutableString *timeStr = [NSMutableString stringWithString:[self getCurrentTimeString]];
-    [timeStr appendString:@"\n"];
-    
-    
-    
-    for (int i=0; i<respirationWaveData.length/2; i++) {
+  NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d       ", seqNum];
+  [timeStr appendString:[self getCurrentTimeString]];
+  [timeStr appendString:@"\n"];
+  
+  
+  
+    for (int i=0; i<respirationWaveData.length/2; i++)
+    {
+        for (uint j = 0; j < 50; j++)
+        {
+          [timeStr appendString:@" "];
+        }
         NSData *one = [respirationWaveData subdataWithRange:NSMakeRange(i*2, 2)];
         unsigned short breathData;
         [one getBytes:&breathData length:2];
@@ -266,27 +280,35 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
     return YES;
 }
--(BOOL)storeIntoAccelerometerWaveDataFile:(NSData *)accelerometerWaveData{
+-(BOOL)storeIntoAccelerometerWaveDataFile:(UInt8)seqNum data:(NSData *)accelerometerWaveData
+{
     if (!accWaveDataFilePath) {
         NSLog(@"invalid acc wave Data File Path");
         return NO;
     }
-    
-    NSMutableString *timeStr = [NSMutableString stringWithString:[self getCurrentTimeString]];
+  
+    NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d       ", seqNum];
+    [timeStr appendString:[self getCurrentTimeString]];
     [timeStr appendString:@"\n"];
     
     
     
-    for (int i=0; i<accelerometerWaveData.length/6; i++) {
+    for (int i=0; i<accelerometerWaveData.length/6; i++)
+    {
+      for (uint j = 0; j < 50; j++)
+      {
+        [timeStr appendString:@" "];
+      }
+      
         NSData *xyz = [accelerometerWaveData subdataWithRange:NSMakeRange(i*6, 6)];
         unsigned short x,y,z;
         [xyz getBytes:&x range:NSMakeRange(0, 2)];
         [xyz getBytes:&y range:NSMakeRange(2, 2)];
         [xyz getBytes:&z range:NSMakeRange(4, 2)];
         
-        [timeStr appendString:[NSString stringWithFormat:@"%d,",x]];
-        [timeStr appendString:[NSString stringWithFormat:@"%d,",y]];
-        [timeStr appendString:[NSString stringWithFormat:@"%d",z]];
+        [timeStr appendString:[NSString stringWithFormat:@"%d  ,",x]];
+        [timeStr appendString:[NSString stringWithFormat:@"%d  ,",y]];
+        [timeStr appendString:[NSString stringWithFormat:@"%d   ",z]];
         [timeStr appendString:@"\n"];
     }
     

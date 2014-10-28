@@ -19,6 +19,9 @@
 #define  update_UI_interval     0.1
 
 @implementation ZLBluetoothLEManage
+{
+  UInt8 PDPSeqNum;
+}
 @synthesize streamBuffer;
 
 
@@ -376,7 +379,8 @@ static unsigned int   breathRateSampleCount = 0;
     
     //0 SEQ Num
     seqNum = temp[0];
-    
+  
+  
     printf("_GDPPayloadParser _begin_ %d\n",seqNum);
     //1 2 3 4 5 6 7 8 general information
     deviceId            =   temp[1]*0x10+temp[2];
@@ -543,6 +547,8 @@ static unsigned int   breathRateSampleCount = 0;
     
     //seqNum
     seqNum = temp[0];
+  
+    PDPSeqNum = seqNum;
     printf("_PDPPayloadParser _begin_ %d\n",seqNum);
     //ECG waveform
     [self ECGWaveformPacket:[payload subdataWithRange:NSMakeRange(1, 40)]];
@@ -551,7 +557,7 @@ static unsigned int   breathRateSampleCount = 0;
     [self respirationWaveformPacket:[payload subdataWithRange:NSMakeRange(41, 10)]];
 
     //accelerometer
-    //[self accelerometerPacket:[payload subdataWithRange:NSMakeRange(51, 30)]];
+    [self accelerometerPacket:[payload subdataWithRange:NSMakeRange(51, 30)]];
     
     printf("_PDPPayloadParser _end_\n");
 }
@@ -593,7 +599,7 @@ static unsigned int   breathRateSampleCount = 0;
     
     [self storeECGDataIntoMonitorView:ECGData];
     if (bDataStoring) {
-        [[ZLStorageFunctionManage sharedInstance] storeIntoECGWaveDataFile:[NSData dataWithBytes:ECGData length:32*2]];
+        [[ZLStorageFunctionManage sharedInstance] storeIntoECGWaveDataFile:PDPSeqNum data: [NSData dataWithBytes:ECGData length:32*2]];
     }
     
 }
@@ -626,7 +632,7 @@ static unsigned int   breathRateSampleCount = 0;
     
     [self storeRespirationDataIntoMonitorView:respirationData];
     if (bDataStoring) {
-        [[ZLStorageFunctionManage sharedInstance] storeIntoRespirationWaveDataFile:[NSData dataWithBytes:respirationData length:8*2]];
+      [[ZLStorageFunctionManage sharedInstance] storeIntoRespirationWaveDataFile:PDPSeqNum data:[NSData dataWithBytes:respirationData length:8*2]];
     }
 }
 -(void)accelerometerPacket:(NSData *)packet{
@@ -665,7 +671,7 @@ static unsigned int   breathRateSampleCount = 0;
     
     //[self storeActivityDataIntoMonitorView:accelerometerData];
     if (bDataStoring) {
-        [[ZLStorageFunctionManage sharedInstance] storeIntoAccelerometerWaveDataFile:[NSData dataWithBytes:accelerometerData length:24*2]];
+      [[ZLStorageFunctionManage sharedInstance] storeIntoAccelerometerWaveDataFile:PDPSeqNum data:[NSData dataWithBytes:accelerometerData length:24*2]];
     }
 
 }

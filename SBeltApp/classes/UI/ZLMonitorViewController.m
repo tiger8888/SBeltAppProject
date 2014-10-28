@@ -179,10 +179,10 @@
   self.actiFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
   [self.actiFrameView setFrameColor:HeartRate_Frame_Color];
   [self.actiFrameView setTitle:@"ACTI"];
-  [self.actiFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.heartRateFrameView.frame.size.width/6.0/5.0];
+  [self.actiFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.actiFrameView.frame.size.width/6.0/5.0];
   self.actiFrameView.backgroundColor = DisplayArea_Color;
   self.actiFrameView.center = CGPointMake(self.actiFrameView.center.x, self.actiFrameView.center.y);
-  
+//  
   
   //heartRate
     self.heartRateFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
@@ -545,6 +545,21 @@ NSTimer *writeLoopTimer;
 
     
 }
+- (void)drawActiRateInView:(UIView*)view withInterval:(CGFloat)interval withTextColor:(UIColor*)color
+{
+  for (int i = 0; i<=8; i++)
+  {
+    UILabel *scaleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 104, 40, 20)];
+    scaleLabel.center = CGPointMake(12, 137 - i*15);
+    scaleLabel.backgroundColor = [UIColor clearColor];
+    scaleLabel.textAlignment = NSTextAlignmentCenter;
+    scaleLabel.text = [NSString stringWithFormat:@"%d",i*20];
+    scaleLabel.textColor = color;
+    scaleLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:10];
+    [view addSubview:scaleLabel];
+  }
+
+}
 -(void)drawHeartRateInView:(UIView *)view withInterva:(CGFloat)interval withTextColor:(UIColor *)color{
     
     
@@ -708,24 +723,24 @@ float respGain = 1.0;
     if (indexPath.row == 2) {//activity
         
         //frame view
-        ZLChartFrameView *chartView  =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
-        [chartView setFrameColor:Activity_Frame_Color];
-        [chartView setTitle:@"ACTI"];
-        [chartView setParams_VInterval:4.0 hInterval:chartView.frame.size.width/10/5];
-        chartView.backgroundColor = DisplayArea_Color;
-        chartView.center = CGPointMake(320/2, chartView.center.y);
-      
-        [scrollContainer addSubview:chartView];
-        
+//        ZLChartFrameView *chartView  =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
+//        [chartView setFrameColor:Activity_Frame_Color];
+//        [chartView setTitle:@"ACTI"];
+//        //[chartView setParams_VInterval:4.0 hInterval:chartView.frame.size.width/10/5];
+//        chartView.backgroundColor = DisplayArea_Color;
+//        chartView.center = CGPointMake(320/2, chartView.center.y);
+//      
+//        [scrollContainer addSubview:chartView];
+//        
         //track view
 
-        
+        [scrollContainer addSubview:self.actiFrameView];
         [scrollContainer addSubview:ActivityTrack];
-        
-        
+        [self drawActiRateInView:scrollContainer withInterval:0 withTextColor:HeartRate_Frame_Color];
+      
     
-        [self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:Activity_Frame_Color];
-      //[self drawHRBRTimeScaleInView:scrollContainer withInterva:self.actiFrameView.frame.size.width/6.0 withTextColor:Activity_Frame_Color inStartPoint:CGPointMake(self.actiFrameView.frame.origin.x, self.actiFrameView.frame.origin.y + self.actiFrameView.frame.size.height + 6)];
+        //[self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:Activity_Frame_Color];
+      [self drawHRBRTimeScaleInView:scrollContainer withInterva:self.actiFrameView.frame.size.width/6.0 withTextColor:Activity_Frame_Color inStartPoint:CGPointMake(self.actiFrameView.frame.origin.x, self.actiFrameView.frame.origin.y + self.actiFrameView.frame.size.height + 6)];
     }
     if (indexPath.row == 3) {//heart rate
         
