@@ -47,7 +47,8 @@ unsigned int deviceId;
 unsigned int deviceVersion;
 unsigned int firmwareId;
 unsigned int firmwareVersion;
-
+static NSString *deviceIDVersion = nil;
+static NSString *firmwareIDVersion = nil;
 
 #define WIDTH_OF_SCREEN         [UIScreen mainScreen].bounds.size.width
 #define HEIGHT_OF_SCREEN        [UIScreen mainScreen].bounds.size.height

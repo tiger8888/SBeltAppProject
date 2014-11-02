@@ -815,7 +815,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "dd7bda0a-1eb4-4667-963a-0c6383b2591f";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7bc77f97-4d8f-4952-8ce5-4bc3d76d6c51";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -833,8 +833,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jacky Tian (U8B2TZRGTS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou mobile brother Communication Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou mobile brother Communication Technology Co., Ltd.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -843,7 +843,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "18cab4da-e933-40ea-ba46-858c2737dc52";
+				"PROVISIONING_PROFILE[sdk=*]" = "ca8b8ca5-bd50-4152-bace-9606368391b9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -858,7 +858,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
 				INFOPLIST_FILE = "SBeltApp/SBeltApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/SBeltApp/libs/BLETTMLib\"",
@@ -876,12 +876,12 @@
 		681754A817698C4C0007EA0D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou mobile brother Communication Technology Co., Ltd.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SBeltApp/SBeltApp-Prefix.pch";
 				INFOPLIST_FILE = "SBeltApp/SBeltApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/SBeltApp/libs/BLETTMLib\"",
@@ -890,6 +890,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "ca8b8ca5-bd50-4152-bace-9606368391b9";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ca8b8ca5-bd50-4152-bace-9606368391b9";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;

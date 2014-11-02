@@ -87,26 +87,26 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
     accWaveDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:accDataSuffix]];
     [self createFileWithPath:accWaveDataFilePath];
-    [@"SeqNum Year-Month-Day Hour:Minute:Second:MS X-axis,Y-axis,Z-axis\n" writeToFile:accWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"SeqNum,Year-Month-Day,Hour:Minute:Second:MS,X-axis,Y-axis,Z-axis\n" writeToFile:accWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     
     //NSLog(accDataFilePath);
     
     breathWaveDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:breathWaveDataSuffix]];
     [self createFileWithPath:breathWaveDataFilePath];
-    [@"SeqNum  Year-Month-Day Hour:Minute:Second:MS Breath wave data\n" writeToFile:breathWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"SeqNum,Year-Month-Day,Hour:Minute:Second:MS,Breath wave data\n" writeToFile:breathWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     
     //NSLog(breathWaveDataFilePath);
     
     ecgWaveDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:ecgWavecDataSuffix]];
     [self createFileWithPath:ecgWaveDataFilePath];
-    [@"SeqNum  Year-Month-Day Hour:Minute:Second:MS   ECG data\n" writeToFile:ecgWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"SeqNum,Year-Month-Day,Hour:Minute:Second:MS,ECG data\n" writeToFile:ecgWaveDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     
    //NSLog(ecgDataFilePath);
     
     
     generalDataFilePath = [realDirPath stringByAppendingPathComponent:[timePrefix stringByAppendingString:generalDataSuffix]];
     [self createFileWithPath:generalDataFilePath];
-    [@"Year-Month-Day Hour:Minute:Second Sequenc Number ,DeviceID/Version,Firmware ID/Version,HR,BR,Reserved,HeartBeat Number,Heart Beat Timerstamp #1 ,Heart Beat Timerstamp #2 ,Heart Beat Timerstamp #3,Heart Beat Timerstamp #4,Heart Beat Timerstamp #5,Heart Beat Timerstamp #6,Heart Beat Timerstamp #7,Heart Beat Timerstamp #8 ,Heart Beat Timerstamp #9 ,Heart Beat Timerstamp #10 ,Heart Beat Timerstamp #11 ,Heart Beat Timerstamp #12 ,Heart Beat Timerstamp #13 ,Heart Beat Timerstamp #14 ,Heart Beat Timerstamp #15 ,Skin Temperature,Reserved,Reserved,ALARM,Battery Status\n" writeToFile:generalDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
+    [@"Year-Month-Day, Hour:Minute:Second, Sequenc Number, DeviceID/Version, Firmware ID/Version,HR,BR,Reserved,HeartBeat Number,Heart Beat Timerstamp #1 ,Heart Beat Timerstamp #2 ,Heart Beat Timerstamp #3,Heart Beat Timerstamp #4,Heart Beat Timerstamp #5,Heart Beat Timerstamp #6,Heart Beat Timerstamp #7,Heart Beat Timerstamp #8 ,Heart Beat Timerstamp #9 ,Heart Beat Timerstamp #10 ,Heart Beat Timerstamp #11 ,Heart Beat Timerstamp #12 ,Heart Beat Timerstamp #13 ,Heart Beat Timerstamp #14 ,Heart Beat Timerstamp #15 ,Skin Temperature,VMU,ALARM,Battery Status\n" writeToFile:generalDataFilePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
     //NSLog(generalDataFilePath);
     
     //通用数据包文件
@@ -142,42 +142,45 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
 }
 
--(BOOL)storeIntoGeneralDataFileWithPackage:(generalDataPackage)package{
+-(BOOL)storeIntoGeneralDataFileWithPackage:(generalDataPackage)package deviceVersion:(NSString*)devVer firmVersion:(NSString*)firmVer
+{
     if (!generalDataFilePath) {
         NSLog(@"invalid ecg wave Data File Path");
         return NO;
     }
-    NSMutableString *timeStr = [NSMutableString stringWithString:[self getCurrentTimeString]];
-    [timeStr appendString:@" "];
+   NSMutableString *timeStr = [NSMutableString stringWithString:[self getCurrentTimeString]]; //Year-Month-Day, Hour:Minute:Second,
+    [timeStr appendString:@","];
     
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.seqNum]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.deviceID]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.deviceVer]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.firmwareID]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.firmwareVer]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartRate]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.respirationRate]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.reserved1]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatNumber]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_1]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_2]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_3]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_4]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_5]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_6]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_7]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_8]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_9]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_10]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_11]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_12]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_13]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_14]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_15]];
-    [timeStr appendString:[NSString stringWithFormat:@"%.1f,",package.skinTemperature]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.reserved2]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.alarm]];
-    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.batteryStatus]];
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.seqNum]]; //Sequenc Number,
+  [timeStr appendString:[NSString stringWithFormat:@"%@,",devVer]]; //DeviceID/Version,
+  [timeStr appendString:[NSString stringWithFormat:@"%@,",firmVer]]; //Firmware ID/Version,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartRate]]; //HR,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.respirationRate]];//BR,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.reserved1]];//Reserved,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatNumber]]; //HeartBeat Number,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_1]];//Heart Beat Timerstamp #1 ,
+
+    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_2]]; //Heart Beat Timerstamp #2 ,
+    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_3]];  //Heart Beat Timerstamp #3,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_4]];  //Heart Beat Timerstamp #4,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_5]]; //Heart Beat Timerstamp #5,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_6]]; //Heart Beat Timerstamp #6,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_7]]; //Heart Beat Timerstamp #7,
+
+    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_8]]; //Heart Beat Timerstamp #8 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_9]];   //Heart Beat Timerstamp #9 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_10]]; //Heart Beat Timerstamp #10 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_11]]; //Heart Beat Timerstamp #11 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_12]]; //Heart Beat Timerstamp #12 ,
+
+    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_13]]; //Heart Beat Timerstamp #13 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_14]];   //Heart Beat Timerstamp #14 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.heartBeatTimerstamp_15]]; //Heart Beat Timerstamp #15 ,
+  [timeStr appendString:[NSString stringWithFormat:@"%.1f,",package.skinTemperature]];  //Skin Temperature,
+  [timeStr appendString:[NSString stringWithFormat:@"%d,",package.reserved2]]; //VMU,
+
+    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.alarm]];  //ALARM,"
+    [timeStr appendString:[NSString stringWithFormat:@"%d,",package.batteryStatus]]; //Battery Status\n
     [timeStr appendString:@"\n"];
     
     NSFileHandle *generalDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:generalDataFilePath];
@@ -217,30 +220,32 @@ NSString *readMeSuffix              = @"_Readme.txt";
         NSLog(@"invalid ecg wave Data File Path");
         return NO;
     }
-    NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d       ", seqNum];
+    NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d,", seqNum];
     [timeStr appendString:[self getCurrentTimeString]];
     [timeStr appendString:@"\n"];
   
+  NSFileHandle *ecgWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:ecgWaveDataFilePath];
+  [ecgWaveDataFileHandle seekToEndOfFile];
+  [ecgWaveDataFileHandle writeData:[timeStr dataUsingEncoding:NSASCIIStringEncoding]];
+  
+    NSMutableString *data = [[NSMutableString alloc] init];
+
     for (int i=0; i<ecgWaveData.length/2; i++)
     {
-      for (uint j = 0; j < 50; j++)
-      {
-        [timeStr appendString:@" "];
-      }
-      
+    
+        [data appendString:@", , ,"];
+
         NSData *one = [ecgWaveData subdataWithRange:NSMakeRange(i*2, 2)];
         unsigned short ecgData;
         [one getBytes:&ecgData length:2];
-        [timeStr appendString:[NSString stringWithFormat:@"%d",ecgData]];
-        [timeStr appendString:@"\n"];
-      
+        [data appendString:[NSString stringWithFormat:@"%d",ecgData]];
+        [data appendString:@"\n"];
+
     }
+  
     
     
-    
-    NSFileHandle *ecgWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:ecgWaveDataFilePath];
-    [ecgWaveDataFileHandle seekToEndOfFile];
-    [ecgWaveDataFileHandle writeData:[timeStr dataUsingEncoding:NSASCIIStringEncoding]];
+    [ecgWaveDataFileHandle writeData:[data dataUsingEncoding:NSASCIIStringEncoding]];
     [ecgWaveDataFileHandle closeFile];
     
     return YES;
@@ -252,30 +257,28 @@ NSString *readMeSuffix              = @"_Readme.txt";
         return NO;
     }
     
-  NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d       ", seqNum];
+  NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d,", seqNum];
   [timeStr appendString:[self getCurrentTimeString]];
   [timeStr appendString:@"\n"];
   
+  NSFileHandle *breathWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:breathWaveDataFilePath];
+  [breathWaveDataFileHandle seekToEndOfFile];
+  [breathWaveDataFileHandle writeData:[timeStr dataUsingEncoding:NSASCIIStringEncoding]];
   
-  
+    NSMutableString *data = [[NSMutableString alloc] init];
     for (int i=0; i<respirationWaveData.length/2; i++)
     {
-        for (uint j = 0; j < 50; j++)
-        {
-          [timeStr appendString:@" "];
-        }
+        [data appendString:@", , ,"];
+
         NSData *one = [respirationWaveData subdataWithRange:NSMakeRange(i*2, 2)];
         unsigned short breathData;
         [one getBytes:&breathData length:2];
-        [timeStr appendString:[NSString stringWithFormat:@"%d",breathData]];
-        [timeStr appendString:@"\n"];
+        [data appendString:[NSString stringWithFormat:@"%d",breathData]];
+        [data appendString:@"\n"];
+
     }
-    
-    
-    
-    NSFileHandle *breathWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:breathWaveDataFilePath];
-    [breathWaveDataFileHandle seekToEndOfFile];
-    [breathWaveDataFileHandle writeData:[timeStr dataUsingEncoding:NSASCIIStringEncoding]];
+  
+    [breathWaveDataFileHandle writeData:[data dataUsingEncoding:NSASCIIStringEncoding]];
     [breathWaveDataFileHandle closeFile];
     
     return YES;
@@ -287,44 +290,45 @@ NSString *readMeSuffix              = @"_Readme.txt";
         return NO;
     }
   
-    NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d       ", seqNum];
+    NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d,", seqNum];
     [timeStr appendString:[self getCurrentTimeString]];
     [timeStr appendString:@"\n"];
     
     
-    
+  NSFileHandle *accWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:accWaveDataFilePath];
+  [accWaveDataFileHandle seekToEndOfFile];
+  [accWaveDataFileHandle writeData:[timeStr dataUsingEncoding:NSASCIIStringEncoding]];
+  
+  NSMutableString *dataStr = [[NSMutableString alloc] init];
+
     for (int i=0; i<accelerometerWaveData.length/6; i++)
     {
-      for (uint j = 0; j < 50; j++)
-      {
-        [timeStr appendString:@" "];
-      }
-      
+        [dataStr appendString:@", , ,"];
+
         NSData *xyz = [accelerometerWaveData subdataWithRange:NSMakeRange(i*6, 6)];
         unsigned short x,y,z;
         [xyz getBytes:&x range:NSMakeRange(0, 2)];
         [xyz getBytes:&y range:NSMakeRange(2, 2)];
         [xyz getBytes:&z range:NSMakeRange(4, 2)];
         
-        [timeStr appendString:[NSString stringWithFormat:@"%d  ,",x]];
-        [timeStr appendString:[NSString stringWithFormat:@"%d  ,",y]];
-        [timeStr appendString:[NSString stringWithFormat:@"%d   ",z]];
-        [timeStr appendString:@"\n"];
+        [dataStr appendString:[NSString stringWithFormat:@"%d,",x]];
+        [dataStr appendString:[NSString stringWithFormat:@"%d,",y]];
+        [dataStr appendString:[NSString stringWithFormat:@"%d,",z]];
+        [dataStr appendString:@"\n"];
+
     }
-    
-    
-    
-    NSFileHandle *accWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:accWaveDataFilePath];
-    [accWaveDataFileHandle seekToEndOfFile];
-    [accWaveDataFileHandle writeData:[timeStr dataUsingEncoding:NSASCIIStringEncoding]];
-    [accWaveDataFileHandle closeFile];
+  
+  [accWaveDataFileHandle writeData:[dataStr dataUsingEncoding:NSASCIIStringEncoding]];
+  [accWaveDataFileHandle closeFile];
+  
+  
     
     return YES;
 
 }
 -(NSString *)getCurrentTimeString{
     NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:SSS"];
+    [formatter setDateFormat:@"yyyy-MM-dd,HH:mm:ss:SSS"];
     NSDate *date = [NSDate date];
     [[NSDate date] timeIntervalSince1970];
     

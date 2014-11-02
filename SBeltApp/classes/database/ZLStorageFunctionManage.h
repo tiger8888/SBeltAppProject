@@ -66,7 +66,7 @@ typedef struct _generalDataPackage{
     
 }generalDataPackage;
 
--(BOOL)storeIntoGeneralDataFileWithPackage:(generalDataPackage)package;
+-(BOOL)storeIntoGeneralDataFileWithPackage:(generalDataPackage)package deviceVersion:(NSString*)devVer firmVersion:(NSString*)firmVer;
 
 -(BOOL)storeIntoGDPDataFile:(NSData *)GDPStream;//原始二进制流
 -(BOOL)storeIntoPDPDataFile:(NSData *)PDPStream;//原始二进制流

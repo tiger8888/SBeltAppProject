@@ -383,6 +383,8 @@ static unsigned int   breathRateSampleCount = 0;
   
     printf("_GDPPayloadParser _begin_ %d\n",seqNum);
     //1 2 3 4 5 6 7 8 general information
+    deviceIDVersion = [NSString stringWithFormat:@"%c%c%c%c",temp[1],temp[2],temp[3],temp[4]];
+    firmwareIDVersion = [NSString stringWithFormat:@"%c%c%c%c",temp[5],temp[6],temp[7],temp[8]];
     deviceId            =   temp[1]*0x10+temp[2];
     deviceVersion       =   temp[3]*0x10+temp[4];
     firmwareId          =   temp[5]*0x10+temp[6];
@@ -511,7 +513,7 @@ static unsigned int   breathRateSampleCount = 0;
     [ZLMonitorVC.dragView setBatteryValue:battery];
     
     if (bDataStoring) {
-        [[ZLStorageFunctionManage sharedInstance] storeIntoGeneralDataFileWithPackage:generalPackage];
+        [[ZLStorageFunctionManage sharedInstance] storeIntoGeneralDataFileWithPackage:generalPackage deviceVersion:deviceIDVersion firmVersion:firmwareIDVersion];
     }
 }
 -(void)GDPOriginalDataStoreWithPayload:(NSData *)payload withCRC:(unsigned char)crc{
