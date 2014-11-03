@@ -51,7 +51,13 @@
     // Drawing code
 }
 */
-
+static bool lastValue = NO;
+- (void)screenOffOnIdle:(id)sender
+{
+  UISwitch *switchBtn = sender;
+  [UIApplication sharedApplication].idleTimerDisabled = (!switchBtn.on);
+  lastValue = switchBtn.enabled;
+}
 #pragma mark tableview begin
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -106,6 +112,7 @@
     return header;
 }
 
+
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 10)];
     [footer setBackgroundColor:[UIColor clearColor]];
@@ -130,7 +137,9 @@
         
         UISwitch *onOffSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 200, HEIGHT_OF_CELL)];
         onOffSwitch.center = CGPointMake(300/2, HEIGHT_OF_CELL/2);
+        onOffSwitch.on = lastValue;
         [onOffSwitch setBackgroundColor:[UIColor clearColor]];
+        [onOffSwitch addTarget:self action:@selector(screenOffOnIdle:) forControlEvents:UIControlEventValueChanged];
         [cell addSubview:onOffSwitch];
         
         UILabel *autoClose = [[UILabel alloc] initWithFrame:CGRectMake(200, 0, 200, HEIGHT_OF_CELL)];

@@ -50,6 +50,7 @@
     trainingMgr = [TrainingProcedureManager sharedInstance];
     
     bDataStoring = NO;
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
