@@ -222,7 +222,7 @@ NSString *readMeSuffix              = @"_Readme.txt";
     }
     NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d,", seqNum];
     [timeStr appendString:[self getCurrentTimeString]];
-    [timeStr appendString:@"\n"];
+    [timeStr appendString:@","];
   
   NSFileHandle *ecgWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:ecgWaveDataFilePath];
   [ecgWaveDataFileHandle seekToEndOfFile];
@@ -232,8 +232,8 @@ NSString *readMeSuffix              = @"_Readme.txt";
 
     for (int i=0; i<ecgWaveData.length/2; i++)
     {
-    
-        [data appendString:@", , ,"];
+        if(i != 0)
+          [data appendString:@", , ,"];
 
         NSData *one = [ecgWaveData subdataWithRange:NSMakeRange(i*2, 2)];
         unsigned short ecgData;
@@ -259,7 +259,7 @@ NSString *readMeSuffix              = @"_Readme.txt";
     
   NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d,", seqNum];
   [timeStr appendString:[self getCurrentTimeString]];
-  [timeStr appendString:@"\n"];
+  [timeStr appendString:@","];
   
   NSFileHandle *breathWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:breathWaveDataFilePath];
   [breathWaveDataFileHandle seekToEndOfFile];
@@ -268,7 +268,8 @@ NSString *readMeSuffix              = @"_Readme.txt";
     NSMutableString *data = [[NSMutableString alloc] init];
     for (int i=0; i<respirationWaveData.length/2; i++)
     {
-        [data appendString:@", , ,"];
+        if(i != 0)
+          [data appendString:@", , ,"];
 
         NSData *one = [respirationWaveData subdataWithRange:NSMakeRange(i*2, 2)];
         unsigned short breathData;
@@ -292,7 +293,7 @@ NSString *readMeSuffix              = @"_Readme.txt";
   
     NSMutableString *timeStr = [NSMutableString stringWithFormat:@"%d,", seqNum];
     [timeStr appendString:[self getCurrentTimeString]];
-    [timeStr appendString:@"\n"];
+    [timeStr appendString:@","];
     
     
   NSFileHandle *accWaveDataFileHandle = [NSFileHandle fileHandleForUpdatingAtPath:accWaveDataFilePath];
@@ -303,6 +304,7 @@ NSString *readMeSuffix              = @"_Readme.txt";
 
     for (int i=0; i<accelerometerWaveData.length/6; i++)
     {
+        if(i != 0)
         [dataStr appendString:@", , ,"];
 
         NSData *xyz = [accelerometerWaveData subdataWithRange:NSMakeRange(i*6, 6)];

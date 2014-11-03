@@ -8,7 +8,7 @@
 
 #import "ZLDragView.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "sharedHeader.h"
 #define interval_between_block      120
 
 @implementation ZLDragView
@@ -22,7 +22,7 @@
         
 
         
-        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 100, 460)];
+        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 100, [UIScreen mainScreen].bounds.size.height)];
         [contentView setBackgroundColor:[UIColor blueColor]];
         [self addSubview:contentView];
         
@@ -31,22 +31,22 @@
         contentView.layer.borderWidth = 2;
         
         heartRateBlock = [[ZLBlockView alloc] initWithFrame:CGRectMake(0, 0, 90, 70)];
-        heartRateBlock.center = CGPointMake(contentView.frame.size.width/2, 46);
-        [heartRateBlock setLabelText:@" HR(bmp)"];
+        heartRateBlock.center = CGPointMake(contentView.frame.size.width/2, 55);
+        [heartRateBlock setLabelText:@" HR(bpm)"];
         [heartRateBlock setContentText:@"86"];
         
         [contentView addSubview:heartRateBlock];
         
         breathRateBlock = [[ZLBlockView alloc] initWithFrame:CGRectMake(0, 0, 90, 70)];
-        breathRateBlock.center = CGPointMake(contentView.frame.size.width/2, 46+interval_between_block);
-        [breathRateBlock setLabelText:@" BR(bmp)"];
+        breathRateBlock.center = CGPointMake(contentView.frame.size.width/2, HEIGHT_OF_SCREEN/4.0f + 55);
+        [breathRateBlock setLabelText:@" BR(bpm)"];
         [breathRateBlock setContentText:@"15.4"];
         [breathRateBlock setContentColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:0.0/255.0 alpha:1.0]];
         
         [contentView addSubview:breathRateBlock];
         
         activityBlock = [[ZLBlockView alloc] initWithFrame:CGRectMake(0, 0, 90, 70)];
-        activityBlock.center = CGPointMake(contentView.frame.size.width/2, 46+interval_between_block*2);
+        activityBlock.center = CGPointMake(contentView.frame.size.width/2, HEIGHT_OF_SCREEN/4.0f*2 + 55);
         [activityBlock setLabelText:@" Activity(g)"];
         [activityBlock setContentText:@"0.7"];
         [activityBlock setContentColor:[UIColor colorWithRed:0.0/255.0 green:191.0/255.0 blue:255.0/255.0 alpha:1.0]];
@@ -62,7 +62,7 @@
 //        [contentView addSubview:tskBlock];
         
         batteryBlock = [[ZLBlockView alloc] initWithFrame:CGRectMake(0, 0, 90, 70)];
-        batteryBlock.center = CGPointMake(contentView.frame.size.width/2, 46+interval_between_block*3);
+        batteryBlock.center = CGPointMake(contentView.frame.size.width/2, HEIGHT_OF_SCREEN/4.0f*3 + 55);
         [batteryBlock setLabelText:@" Battery(%)"];
         [batteryBlock setContentText:@"97"];
         [batteryBlock setContentColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:205.0/255.0 alpha:1.0]];

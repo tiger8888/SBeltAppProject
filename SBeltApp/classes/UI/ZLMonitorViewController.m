@@ -144,16 +144,18 @@
     
     UITapGestureRecognizer *shortPressGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shortPressAction:)];
     [bgView addGestureRecognizer:shortPressGesture];
-    
-    container = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_OF_SCREEN, HEIGHT_OF_SCREEN)];
+  
+    UIView *statusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH_OF_SCREEN, 20)];
+    statusView.backgroundColor = MAINGRAYCOLOR;
+    container = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, WIDTH_OF_SCREEN, HEIGHT_OF_SCREEN)];
     container.delegate = self;
     container.dataSource = self;
     container.backgroundColor = MAINGRAYCOLOR;
     container.userInteractionEnabled = YES;
     container.separatorStyle = UITableViewCellSelectionStyleNone;
     [bgView addSubview:container];
-    
-    
+    [bgView addSubview:statusView];
+  
     
     self.dragView = [ZLDragView dragView];
     [bgView addSubview:self.dragView];
@@ -213,7 +215,8 @@
     scale = 1;
   
   [ECGTrack setScaleOfX:scale/2];
-  
+  [RespirationTrack setScaleOfX:scale];
+
   if(scale == 1)
     [btn setTitle:@"1" forState:UIControlStateNormal];
   else if(scale == (1/2.0f))
@@ -233,23 +236,29 @@
   [RespirationTrack setScaleOfX:scale];
   
   if(scale == 1)
-    [btn setTitle:@"1" forState:UIControlStateNormal];
+    [btn setTitle:@"t*1" forState:UIControlStateNormal];
   else if(scale == (1/2.0f))
-    [btn setTitle:@"1/2" forState:UIControlStateNormal];
+    [btn setTitle:@"t*1/2" forState:UIControlStateNormal];
   else
-    [btn setTitle:@"1/4" forState:UIControlStateNormal];
+    [btn setTitle:@"t*1/4" forState:UIControlStateNormal];
 
 }
 -(void)initTrackView{
-    
+  
+
   ECGTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(8, 2, 320-8, 140-5)];
   ECGTrack.backgroundColor = [UIColor clearColor];
   ECGTrack.center = CGPointMake(320/2, ECGTrack.center.y);
   [ECGTrack setScaleOfX:0.5];
-  ECGSelectScaleBtn = [[UIButton alloc] initWithFrame:CGRectMake(ECGTrack.frame.size.width - 74, 20, 64, 44)];
+  
+  ECGSelectScaleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  ECGSelectScaleBtn.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
+  [ECGSelectScaleBtn setFrame:CGRectMake(ECGTrack.frame.size.width - 40, 2, 36, 12)];
   [ECGSelectScaleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-  [ECGSelectScaleBtn setTitle:@"1" forState:UIControlStateNormal];
+  [ECGSelectScaleBtn setTitle:@"t*1" forState:UIControlStateNormal];
+  [ECGSelectScaleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
   [ECGSelectScaleBtn addTarget:self action:@selector(ECGScaleSelected:) forControlEvents:UIControlEventTouchDown];
+  
   [ECGTrack addSubview:ECGSelectScaleBtn];
 
   
@@ -258,11 +267,16 @@
   RespirationTrack.backgroundColor = [UIColor clearColor];
   RespirationTrack.center = CGPointMake(320/2, RespirationTrack.center.y);
   [RespirationTrack setScaleOfX:1];
-  RESPSelectScaleBtn = [[UIButton alloc] initWithFrame:CGRectMake(RespirationTrack.frame.size.width - 74, 10, 64, 44)];
-  [RESPSelectScaleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  
+  RESPSelectScaleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  RESPSelectScaleBtn.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
+  [RESPSelectScaleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+  [RESPSelectScaleBtn setFrame:CGRectMake(RespirationTrack.frame.size.width - 40, 2, 36, 12)];
+  
+  [RESPSelectScaleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
   [RESPSelectScaleBtn setTitle:@"1" forState:UIControlStateNormal];
   [RESPSelectScaleBtn addTarget:self action:@selector(RESPScaleSelected:) forControlEvents:UIControlEventTouchDown];
-  [RespirationTrack addSubview:RESPSelectScaleBtn];
+  //[RespirationTrack addSubview:RESPSelectScaleBtn];
   
   
   
@@ -517,7 +531,7 @@ NSTimer *writeLoopTimer;
 
 #pragma mark tableview delegate
 
-#define HEIGHT_OF_CELL   160
+#define HEIGHT_OF_CELL   180
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -527,7 +541,7 @@ NSTimer *writeLoopTimer;
     return 5;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return HEIGHT_OF_CELL;
+    return [UIScreen mainScreen].bounds.size.height/3;
 }
 -(void)drawTimeScaleInView:(UIView *)view withInterva:(CGFloat)interval withTextColor:(UIColor *)color{
     
@@ -553,7 +567,7 @@ NSTimer *writeLoopTimer;
     scaleLabel.center = CGPointMake(12, 137 - i*15);
     scaleLabel.backgroundColor = [UIColor clearColor];
     scaleLabel.textAlignment = NSTextAlignmentCenter;
-    scaleLabel.text = [NSString stringWithFormat:@"%d",i*20];
+    scaleLabel.text = [NSString stringWithFormat:@"%d",i*2];
     scaleLabel.textColor = color;
     scaleLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:10];
     [view addSubview:scaleLabel];
@@ -675,12 +689,13 @@ float respGain = 1.0;
         
         ecgGainButton = [UIButton buttonWithType:UIButtonTypeCustom];
         ecgGainButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
-        ecgGainButton.frame = CGRectMake(0, 0, 50, 20);
+        ecgGainButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2, 2, 36, 12);
         ecgGainButton.layer.cornerRadius = 6;
-        [ecgGainButton setTitle:@"1" forState:UIControlStateNormal];
+        ecgGainButton.titleLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:10];
+        [ecgGainButton setTitle:@"G*1" forState:UIControlStateNormal];
         [ecgGainButton addTarget:self action:@selector(ecgGainAction:) forControlEvents:UIControlEventTouchUpInside];
         [ecgGainButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
-        ecgGainButton.center = CGPointMake(30, chartView.frame.size.height/2);
+        //ecgGainButton.center = CGPointMake(30, chartView.frame.size.height/2);
         [cell addSubview:ecgGainButton];
         
         
@@ -703,12 +718,13 @@ float respGain = 1.0;
         
         respGainButton = [UIButton buttonWithType:UIButtonTypeCustom];
         respGainButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
-        respGainButton.frame = CGRectMake(0, 0, 50, 20);
+        respGainButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2, 2, 36, 12);
         respGainButton.layer.cornerRadius = 6;
-        [respGainButton setTitle:@"1" forState:UIControlStateNormal];
+        respGainButton.titleLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:10];
+        [respGainButton setTitle:@"G*1" forState:UIControlStateNormal];
         [respGainButton addTarget:self action:@selector(respGainAction:) forControlEvents:UIControlEventTouchUpInside];
         [respGainButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
-        respGainButton.center = CGPointMake(30, chartView.frame.size.height/2);
+        //respGainButton.center = CGPointMake(30, chartView.frame.size.height/2);
         [cell addSubview:respGainButton];
         
         

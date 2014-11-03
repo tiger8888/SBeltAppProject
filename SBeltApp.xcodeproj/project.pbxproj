@@ -891,7 +891,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=*]" = "ca8b8ca5-bd50-4152-bace-9606368391b9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ca8b8ca5-bd50-4152-bace-9606368391b9";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

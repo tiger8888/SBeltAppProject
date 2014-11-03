@@ -413,7 +413,7 @@ static unsigned int   breathRateSampleCount = 0;
             breathRateSampleCount = 0;
         }
   
-        activitySample[activitySampleCount++] = temp[47];
+        activitySample[activitySampleCount++] = temp[47]/10;
         if(activitySampleCount >= samplesBufferSize)
         {
           activitySampleCount = 0;
@@ -847,7 +847,7 @@ int  loc = 0;
     
     //activity
     static float activityToUI = 0.0;
-  activityToUI = activitySample[activitySampleCount - 1]/10;
+  activityToUI = activitySample[activitySampleCount - 1];
 //    for (int i = 0; i<activitySampleCount; i++) {
 //            printf("activity sample in update UI %d\n",activitySample[i]);
 //        
