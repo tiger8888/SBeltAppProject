@@ -212,17 +212,21 @@
   static CGFloat scale = 1;
   scale /= 2;
   if(scale == (1/8.0f))
-    scale = 1;
+    scale = 4;
   
   [ECGTrack setScaleOfX:scale/2];
   [RespirationTrack setScaleOfX:scale];
 
   if(scale == 1)
-    [btn setTitle:@"1" forState:UIControlStateNormal];
+    [btn setTitle:@"Tx1" forState:UIControlStateNormal];
+  else if(scale == 2)
+    [btn setTitle:@"Tx2" forState:UIControlStateNormal];
+  else if(scale == 4)
+    [btn setTitle:@"Tx4" forState:UIControlStateNormal];
   else if(scale == (1/2.0f))
-    [btn setTitle:@"1/2" forState:UIControlStateNormal];
+    [btn setTitle:@"Tx1/2" forState:UIControlStateNormal];
   else
-    [btn setTitle:@"1/4" forState:UIControlStateNormal];
+    [btn setTitle:@"Tx1/4" forState:UIControlStateNormal];
 }
 
 - (void)RESPScaleSelected:(id)sender
@@ -236,11 +240,11 @@
   [RespirationTrack setScaleOfX:scale];
   
   if(scale == 1)
-    [btn setTitle:@"t*1" forState:UIControlStateNormal];
+    [btn setTitle:@"Tx1" forState:UIControlStateNormal];
   else if(scale == (1/2.0f))
-    [btn setTitle:@"t*1/2" forState:UIControlStateNormal];
+    [btn setTitle:@"Tx1/2" forState:UIControlStateNormal];
   else
-    [btn setTitle:@"t*1/4" forState:UIControlStateNormal];
+    [btn setTitle:@"Tx1/4" forState:UIControlStateNormal];
 
 }
 -(void)initTrackView{
@@ -252,12 +256,12 @@
   [ECGTrack setScaleOfX:0.5];
   
   ECGSelectScaleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  ECGSelectScaleBtn.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
-  [ECGSelectScaleBtn setFrame:CGRectMake(ECGTrack.frame.size.width - 40, 2, 36, 12)];
+  ECGSelectScaleBtn.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
+  [ECGSelectScaleBtn setFrame:CGRectMake(ECGTrack.frame.size.width - 60, 2, 50, 30)];
   [ECGSelectScaleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-  [ECGSelectScaleBtn setTitle:@"t*1" forState:UIControlStateNormal];
+  [ECGSelectScaleBtn setTitle:@"Tx1" forState:UIControlStateNormal];
   [ECGSelectScaleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-  [ECGSelectScaleBtn addTarget:self action:@selector(ECGScaleSelected:) forControlEvents:UIControlEventTouchDown];
+  [ECGSelectScaleBtn addTarget:self action:@selector(ECGScaleSelected:) forControlEvents:UIControlEventTouchUpInside];
   
   [ECGTrack addSubview:ECGSelectScaleBtn];
 
@@ -632,7 +636,7 @@ float ecgGain = 1.0;
     if (ecgGain > 2.0) {
         ecgGain = 0.5;
     }
-    [button setTitle:[NSString stringWithFormat:@"%.1f",ecgGain] forState:UIControlStateNormal];
+    [button setTitle:[NSString stringWithFormat:@"Gx%.1f",ecgGain] forState:UIControlStateNormal];
     [ECGTrack setECGGain:ecgGain];
 }
 
@@ -643,7 +647,7 @@ float respGain = 1.0;
     if (respGain > 2.0) {
         respGain = 0.5;
     }
-    [button setTitle:[NSString stringWithFormat:@"%.1f",respGain] forState:UIControlStateNormal];
+    [button setTitle:[NSString stringWithFormat:@"Gx%.1f",respGain] forState:UIControlStateNormal];
     [RespirationTrack setRespGain:respGain];
 }
 
@@ -685,14 +689,14 @@ float respGain = 1.0;
         [scrollContainer addSubview:chartView];
         
        
-        [self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:ECG_Frame_Color];
+        //[self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:ECG_Frame_Color];
         
         ecgGainButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        ecgGainButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
-        ecgGainButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2, 2, 36, 12);
+        ecgGainButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
+        ecgGainButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2, 2, 50, 30);
         ecgGainButton.layer.cornerRadius = 6;
         ecgGainButton.titleLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:10];
-        [ecgGainButton setTitle:@"G*1" forState:UIControlStateNormal];
+        [ecgGainButton setTitle:@"Gx1" forState:UIControlStateNormal];
         [ecgGainButton addTarget:self action:@selector(ecgGainAction:) forControlEvents:UIControlEventTouchUpInside];
         [ecgGainButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
         //ecgGainButton.center = CGPointMake(30, chartView.frame.size.height/2);
@@ -717,11 +721,11 @@ float respGain = 1.0;
         
         
         respGainButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        respGainButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1.0];
-        respGainButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2, 2, 36, 12);
+        respGainButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
+        respGainButton.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2, 2, 50, 30);
         respGainButton.layer.cornerRadius = 6;
         respGainButton.titleLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:10];
-        [respGainButton setTitle:@"G*1" forState:UIControlStateNormal];
+        [respGainButton setTitle:@"Gx1" forState:UIControlStateNormal];
         [respGainButton addTarget:self action:@selector(respGainAction:) forControlEvents:UIControlEventTouchUpInside];
         [respGainButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
         //respGainButton.center = CGPointMake(30, chartView.frame.size.height/2);
@@ -733,7 +737,7 @@ float respGain = 1.0;
         [scrollContainer addSubview:RespirationTrack];
         
         
-        [self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:Respiration_Frame_Color];
+        //[self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:Respiration_Frame_Color];
         
     }
     if (indexPath.row == 2) {//activity
@@ -756,7 +760,7 @@ float respGain = 1.0;
       
     
         //[self drawTimeScaleInView:scrollContainer withInterva:chartView.frame.size.width/10.0 withTextColor:Activity_Frame_Color];
-      [self drawHRBRTimeScaleInView:scrollContainer withInterva:self.actiFrameView.frame.size.width/6.0 withTextColor:Activity_Frame_Color inStartPoint:CGPointMake(self.actiFrameView.frame.origin.x, self.actiFrameView.frame.origin.y + self.actiFrameView.frame.size.height + 6)];
+      //[self drawHRBRTimeScaleInView:scrollContainer withInterva:self.actiFrameView.frame.size.width/6.0 withTextColor:Activity_Frame_Color inStartPoint:CGPointMake(self.actiFrameView.frame.origin.x, self.actiFrameView.frame.origin.y + self.actiFrameView.frame.size.height + 6)];
     }
     if (indexPath.row == 3) {//heart rate
         
@@ -770,7 +774,7 @@ float respGain = 1.0;
         
         [self drawHeartRateInView:scrollContainer withInterva:140.0/8.0 withTextColor:HeartRate_Frame_Color];
         
-        [self drawHRBRTimeScaleInView:scrollContainer withInterva:self.heartRateFrameView.frame.size.width/6.0 withTextColor:HeartRate_Frame_Color inStartPoint:CGPointMake(self.heartRateFrameView.frame.origin.x, self.heartRateFrameView.frame.origin.y + self.heartRateFrameView.frame.size.height + 6)];
+        //[self drawHRBRTimeScaleInView:scrollContainer withInterva:self.heartRateFrameView.frame.size.width/6.0 withTextColor:HeartRate_Frame_Color inStartPoint:CGPointMake(self.heartRateFrameView.frame.origin.x, self.heartRateFrameView.frame.origin.y + self.heartRateFrameView.frame.size.height + 6)];
         
     }
     if (indexPath.row == 4) {//breath rate
@@ -788,7 +792,7 @@ float respGain = 1.0;
         
         [self drawBreathRateInView:scrollContainer withInterva:140.0/8.0 withTextColor:BreathRate_Frame_Color];
         
-        [self drawHRBRTimeScaleInView:scrollContainer withInterva:self.breatheRateFrameView.frame.size.width/6.0 withTextColor:BreathRate_Frame_Color inStartPoint:CGPointMake(self.breatheRateFrameView.frame.origin.x, self.breatheRateFrameView.frame.origin.y + self.breatheRateFrameView.frame.size.height + 6)];
+        //[self drawHRBRTimeScaleInView:scrollContainer withInterva:self.breatheRateFrameView.frame.size.width/6.0 withTextColor:BreathRate_Frame_Color inStartPoint:CGPointMake(self.breatheRateFrameView.frame.origin.x, self.breatheRateFrameView.frame.origin.y + self.breatheRateFrameView.frame.size.height + 6)];
     }
     cell.textLabel.backgroundColor = [UIColor clearColor];
     
