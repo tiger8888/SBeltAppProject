@@ -503,7 +503,7 @@ static unsigned int   breathRateSampleCount = 0;
     generalPackage.heartBeatTimerstamp_14    =   heartBeatTimerStamp14;
     generalPackage.heartBeatTimerstamp_15    =   heartBeatTimerStamp15;
     generalPackage.skinTemperature           =   skinTemperature;
-    generalPackage.reserved2                 =   reserved2;
+    generalPackage.reserved2                 =   activitySample[activitySampleCount - 1];
     generalPackage.alarm                     =   alarm;
     generalPackage.batteryStatus             =   battery;
     
@@ -846,18 +846,21 @@ int  loc = 0;
     respirationSampeCount = 0;
     
     //activity
+
     static float activityToUI = 0.0;
-  activityToUI = activitySample[activitySampleCount - 1];
-//    for (int i = 0; i<activitySampleCount; i++) {
-//            printf("activity sample in update UI %d\n",activitySample[i]);
-//        
-//        activityToUI = activitySample[i];
-//        //0~887~1774
-//        int yUILocation = activitySample[i]/1774.0*140.0;
-//        NSLog(@"yUILocation = %d",yUILocation);
-//            [ZLMonitorVC.ActivityTrack addValueToBuffer:yUILocation];
-//            [ZLMonitorVC.ActivityTrack setNeedsDisplay];
-//    }
+    for (int i = 0; i<activitySampleCount; i++)
+    {
+            printf("activity sample in update UI %d\n",activitySample[i]);
+        
+        activityToUI = activitySample[i]/10.0f;
+
+      int yUILocation = (ZLMonitorVC.ActivityTrack.frame.size.height -  (activityToUI/16.0f)*ZLMonitorVC.ActivityTrack.frame.size.height);
+      //yUILocation += 10;
+      
+      NSLog(@"yUILocation = %d",yUILocation);
+            [ZLMonitorVC.ActivityTrack addValueToBuffer:yUILocation];
+            [ZLMonitorVC.ActivityTrack setNeedsDisplay];
+    }
     activitySampleCount = 0;
     
     

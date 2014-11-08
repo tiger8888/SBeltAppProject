@@ -282,7 +282,10 @@
   [RESPSelectScaleBtn addTarget:self action:@selector(RESPScaleSelected:) forControlEvents:UIControlEventTouchDown];
   //[RespirationTrack addSubview:RESPSelectScaleBtn];
   
-  
+  ActivityTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24, 24, 320-8, 140-5)];
+  ActivityTrack.backgroundColor = [UIColor clearColor];
+  //ActivityTrack.center = CGPointMake(320/2, ActivityTrack.center.y);
+  [ActivityTrack setScaleOfX:2];
   
   
   heartRateTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24+24+10, 2, 320-8-24, 140-5)];
@@ -568,7 +571,7 @@ NSTimer *writeLoopTimer;
   for (int i = 0; i<=8; i++)
   {
     UILabel *scaleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 104, 40, 20)];
-    scaleLabel.center = CGPointMake(12, 137 - i*15);
+    scaleLabel.center = CGPointMake(12, 134 - i*15);
     scaleLabel.backgroundColor = [UIColor clearColor];
     scaleLabel.textAlignment = NSTextAlignmentCenter;
     scaleLabel.text = [NSString stringWithFormat:@"%d",i*2];
@@ -583,7 +586,7 @@ NSTimer *writeLoopTimer;
     
     for (int i = 0; i<=7; i++) {
         UILabel *scaleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 104, 40, 20)];
-        scaleLabel.center = CGPointMake(12, 137 - i*interval);
+        scaleLabel.center = CGPointMake(12, 134 - i*interval);
         scaleLabel.backgroundColor = [UIColor clearColor];
         scaleLabel.textAlignment = NSTextAlignmentCenter;
         scaleLabel.text = [NSString stringWithFormat:@"%d",i*40];
@@ -600,7 +603,7 @@ NSTimer *writeLoopTimer;
     
     for (int i = 0; i<=7; i++) {
         UILabel *scaleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 104, 40, 20)];
-        scaleLabel.center = CGPointMake(12, 137 - i*interval);
+        scaleLabel.center = CGPointMake(12, 134 - i*interval);
         scaleLabel.backgroundColor = [UIColor clearColor];
         scaleLabel.textAlignment = NSTextAlignmentCenter;
         scaleLabel.text = [NSString stringWithFormat:@"%d",i*10];
