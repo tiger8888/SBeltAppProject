@@ -848,7 +848,7 @@ int  loc = 0;
     //activity
 
     static float activityToUI = 0.0;
-
+    
     for (int i = 0; i<activitySampleCount; i++)
     {
             printf("activity sample in update UI %d\n",activitySample[i]);

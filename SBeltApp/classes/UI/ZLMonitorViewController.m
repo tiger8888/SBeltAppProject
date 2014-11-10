@@ -282,7 +282,7 @@
   [RESPSelectScaleBtn addTarget:self action:@selector(RESPScaleSelected:) forControlEvents:UIControlEventTouchDown];
   //[RespirationTrack addSubview:RESPSelectScaleBtn];
   
-  ActivityTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24, 24, 320-8, 140-5)];
+  ActivityTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24, 24, 320-8 -24, 140-5)];
   ActivityTrack.backgroundColor = [UIColor clearColor];
   //ActivityTrack.center = CGPointMake(320/2, ActivityTrack.center.y);
   [ActivityTrack setScaleOfX:1];
