@@ -178,7 +178,7 @@
 -(void)initFrameView{
   
   //ACTI Frame view
-  self.actiFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 2, 320-8-24, 140-5)];
+  self.actiFrameView =  [[ZLChartFrameView alloc] initWithFrame:CGRectMake(24, 15, 320-8-24, 140-5)];
   [self.actiFrameView setFrameColor:HeartRate_Frame_Color];
   [self.actiFrameView setTitle:@"ACTI"];
   [self.actiFrameView setParams_VInterval:140.0/8.0/5.0 hInterval:self.actiFrameView.frame.size.width/6.0/5.0];
@@ -285,7 +285,7 @@
   ActivityTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24, 24, 320-8, 140-5)];
   ActivityTrack.backgroundColor = [UIColor clearColor];
   //ActivityTrack.center = CGPointMake(320/2, ActivityTrack.center.y);
-  [ActivityTrack setScaleOfX:2];
+  [ActivityTrack setScaleOfX:1];
   
   
   heartRateTrack = [[ZLChartTrackView alloc] initWithFrame:CGRectMake(24+24+10, 2, 320-8-24, 140-5)];
@@ -571,7 +571,7 @@ NSTimer *writeLoopTimer;
   for (int i = 0; i<=8; i++)
   {
     UILabel *scaleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 104, 40, 20)];
-    scaleLabel.center = CGPointMake(12, 134 - i*15);
+    scaleLabel.center = CGPointMake(12, 146 - i*16);
     scaleLabel.backgroundColor = [UIColor clearColor];
     scaleLabel.textAlignment = NSTextAlignmentCenter;
     scaleLabel.text = [NSString stringWithFormat:@"%d",i*2];

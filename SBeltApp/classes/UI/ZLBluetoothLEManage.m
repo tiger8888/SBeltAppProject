@@ -413,7 +413,7 @@ static unsigned int   breathRateSampleCount = 0;
             breathRateSampleCount = 0;
         }
   
-        activitySample[activitySampleCount++] = temp[47]/10;
+        activitySample[activitySampleCount++] = temp[47];
         if(activitySampleCount >= samplesBufferSize)
         {
           activitySampleCount = 0;
@@ -848,16 +848,17 @@ int  loc = 0;
     //activity
 
     static float activityToUI = 0.0;
+
     for (int i = 0; i<activitySampleCount; i++)
     {
             printf("activity sample in update UI %d\n",activitySample[i]);
         
         activityToUI = activitySample[i]/10.0f;
 
-      int yUILocation = (ZLMonitorVC.ActivityTrack.frame.size.height -  (activityToUI/16.0f)*ZLMonitorVC.ActivityTrack.frame.size.height);
-      //yUILocation += 10;
-      
-      NSLog(@"yUILocation = %d",yUILocation);
+      CGFloat yUILocation = (ZLMonitorVC.ActivityTrack.frame.size.height -  (activityToUI/16.0f)*ZLMonitorVC.ActivityTrack.frame.size.height);
+      //yUILocation -= 14;
+      //yUILocation = 0;
+      //NSLog(@"yUILocation = %d",yUILocation);
             [ZLMonitorVC.ActivityTrack addValueToBuffer:yUILocation];
             [ZLMonitorVC.ActivityTrack setNeedsDisplay];
     }
